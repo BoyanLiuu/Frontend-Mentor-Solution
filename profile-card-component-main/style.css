@@ -1,0 +1,108 @@
+:root {
+    box-sizing: border-box;
+    --color-dark-cyan: hsl(185, 75%, 39%);
+    --color-very-dark-desaturated-blue: hsl(229, 23%, 23%);
+    --color-dark-greyish-blue: hsl(227, 10%, 46%);
+    --large-font-size: 18px;
+    --medium-font-size: 14px;
+    --small-font-size: 10px;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: var(--color-dark-cyan);
+    font-size: var(--large-font-size);
+}
+
+.top-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50vh;
+    width: 50vw;
+
+    background-image: url('./images/bg-pattern-top.svg');
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+.bottom-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 50vh;
+    width: 50vw;
+
+    background-image: url('./images/bg-pattern-bottom.svg');
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.card {
+    z-index: 1;
+    width: 350px;
+    min-height: 374px;
+    background-color: white;
+    /* Both the following code set the radius of the card border*/
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Middle card css styles */
+.card_middle {
+    text-align: center;
+    border-bottom: 1px solid #e8e9ec;
+}
+.card_middle .card_middle_img {
+    border-radius: 50%;
+    margin-top: -50px;
+    margin-bottom: 24px;
+    border: 5px solid white;
+}
+.section_title {
+    color: var(--color-very-dark-desaturated-blue);
+    font-weight: 700;
+}
+.side_text {
+    color: var(--color-dark-greyish-blue);
+}
+.section_description {
+    font-size: var(--small-font-size);
+}
+.location {
+    font-size: var(--medium-font-size);
+}
+.card_middle .card_middle_info {
+    margin-bottom: 22px;
+}
+.card_middle .side_text {
+    margin-left: 9px;
+}
+.card_middle .location {
+    margin-top: 10px;
+}
+
+/* Bottom  card css styles */
+.card_bottom {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.card_bottom .section_description {
+    margin-top: 5px;
+}

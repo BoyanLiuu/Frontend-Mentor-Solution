@@ -1,0 +1,216 @@
+:root {
+    box-sizing: border-box;
+    --large-font-size: 4rem;
+    --medium-font-size: 1.625rem;
+    --small-font-size: 1.5rem;
+    --soft-violet-color: hsl(273, 75%, 66%);
+    --soft-blue-color: hsl(240, 73%, 65%);
+    --color-light-grayish-blue: hsl(240, 5%, 91%);
+    --color-dark-grayish-blue: hsl(240, 6%, 50%);
+    --color-very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --color-soft-red: hsl(14, 88%, 65%);
+
+    font-size: 50%;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: antiquewhite;
+    font-family: 'Kumbh Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(
+        to bottom,
+        var(--soft-violet-color),
+        var(--soft-blue-color)
+    );
+}
+
+@media only screen and (max-width: 1000px) {
+    body {
+        padding-top: 15rem;
+        padding-bottom: 18rem;
+    }
+}
+/* #############Overall container CSS################# */
+.container {
+    display: flex;
+    width: 110rem;
+    background: url('./images/bg-pattern-desktop.svg'), white;
+    border-radius: 3rem;
+    background-position: -72rem -37.5rem;
+    background-repeat: no-repeat;
+}
+@media only screen and (max-width: 1000px) {
+    .container {
+        flex-direction: column;
+        width: 40rem;
+        box-shadow: 0 5rem 5rem -10px rgba(0, 0, 0, 0.25);
+        background: url('./images/bg-pattern-mobile.svg'), white;
+        background-position: 50% 0;
+        background-repeat: no-repeat;
+    }
+}
+@media only screen and (max-width: 40rem) {
+    .container {
+        min-width: 40rem;
+    }
+}
+/* #############Side svg CSS################# */
+.svg_container {
+    position: relative;
+}
+
+.cube_img {
+    position: absolute;
+    top: 25.75rem;
+    left: -11.5rem;
+    animation: dropCub 2.5s infinite;
+}
+
+@media only screen and (max-width: 1000px) {
+    .cube_img {
+        position: absolute;
+        top: -5.5rem;
+        left: 50%;
+        width: 12rem;
+        margin-left: -15.5rem;
+        z-index: 2;
+    }
+}
+
+.women_container {
+    overflow: hidden;
+}
+.women__img {
+    margin-top: 10rem;
+    margin-left: -9.5rem;
+}
+@media only screen and (max-width: 1000px) {
+    .women__img {
+        position: absolute;
+        top: -23.5rem;
+        left: 50%;
+        margin-left: -15.5rem;
+        width: 30rem;
+    }
+    .women_container {
+        overflow: visible;
+        position: relative;
+    }
+}
+/* #############FAQ CSS################# */
+
+.faq_content_container {
+    width: 50%;
+    margin-left: auto;
+    padding: 9rem 7rem 9rem 4.5rem;
+}
+@media only screen and (max-width: 1000px) {
+    .faq_content_container {
+        width: 100%;
+        padding: 15rem 3rem 4rem 3rem;
+    }
+    .faq_title {
+        text-align: center;
+    }
+}
+
+.faq_title {
+    font-size: var(--large-font-size);
+    margin-bottom: 5rem;
+}
+
+.faq {
+    margin: 2rem 0;
+    border-bottom: 1px solid var(--color-light-grayish-blue);
+}
+.faq__question {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-right: 4rem;
+    outline: none;
+    list-style: none;
+    color: var(--color-very-dark-grayish-blue);
+    font-size: var(--medium-font-size);
+    cursor: pointer;
+}
+
+.faq__question:hover {
+    color: var(--color-soft-red);
+}
+/* Remove unnecessary arrow for the details tag */
+.faq__question::-webkit-details-marker {
+    display: none;
+}
+.faq[open] .faq__question {
+    font-weight: 700;
+}
+.faq__question::after {
+    content: url('./images/icon-arrow-down.svg');
+    position: absolute;
+    right: 2rem;
+}
+
+@media only screen and (max-width: 1000px) {
+    .faq__question::after {
+        right: 0;
+    }
+}
+.faq__answer {
+    color: var(--color-dark-grayish-blue);
+    font-size: var(--small-font-size);
+    line-height: 2rem;
+    margin-bottom: 2rem;
+    padding-right: 4rem;
+    animation: fadeIn ease 2s;
+}
+
+/* #############footer CSS################# */
+.attribution {
+    position: absolute;
+    left: 50%;
+    bottom: 2rem;
+    transform: translate(-50%);
+    font-size: 11px;
+    line-height: 1.75rem;
+    text-align: center;
+}
+
+.attribution a {
+    color: var(--color-light-grayish-blue);
+}
+/* #############footer CSS################# */
+
+@keyframes dropCub {
+    0% {
+        filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+        transform: translate(0);
+    }
+    50% {
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+        transform: translateY(-1rem);
+    }
+    100% {
+        filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+        transform: translate(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

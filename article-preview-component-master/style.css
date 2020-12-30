@@ -1,0 +1,88 @@
+:root {
+    box-sizing: border-box;
+    --large-font-size: 2.5rem;
+    --small-font-size: 1.625rem;
+    --very-dark-grayish-blue-color: hsl(217, 19%, 35%);
+    --desaturated-dark-blue-color: hsl(214, 17%, 51%);
+    --grayish-blue-color: hsl(212, 23%, 69%);
+    --light-grayish-blue-color: hsl(210, 46%, 95%);
+
+    font-size: 50%;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--light-grayish-blue-color);
+    font-size: var(--small-font-size);
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+/* ############## Main container CSS ####################### */
+.container {
+    width: 91.25rem;
+    height: 35rem;
+    background-color: white;
+    display: flex;
+    border-radius: 1.5rem;
+    box-shadow: 1.5rem 0.75rem 8rem rgba(109, 127, 151, 0.3);
+}
+
+/* ############## Main Image CSS ####################### */
+.main_image {
+    width: 39%;
+    height: 100%;
+    object-fit: cover;
+    object-position: -2px 0;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
+/* ############## Main Content  CSS ####################### */
+
+.main_cotent-container {
+    width: 61%;
+    padding: 4rem 5rem;
+}
+
+.header {
+    font-size: var(--large-font-size);
+    font-weight: 700;
+    color: var(--very-dark-grayish-blue-color);
+    padding-bottom: 1.5rem;
+}
+.mid_content {
+    padding-bottom: 1.5rem;
+    color: var(--desaturated-dark-blue-color);
+}
+.bot_content {
+    color: var(--desaturated-dark-blue-color);
+    display: table;
+}
+
+.profile_img {
+    display: table-cell;
+    border-radius: 50%;
+    width: 5rem;
+}
+.profile-container {
+    display: table-row;
+}
+.info_container {
+    display: table-cell;
+}
+.name {
+    font-weight: 700;
+}
+.share_icon {
+    display: table-cell;
+}
+/* ############## Additional animation CSS ####################### */

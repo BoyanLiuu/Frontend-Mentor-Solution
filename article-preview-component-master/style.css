@@ -1,6 +1,7 @@
 :root {
     box-sizing: border-box;
     --large-font-size: 2.5rem;
+    --medium-font-size: 2rem;
     --small-font-size: 1.625rem;
     --very-dark-grayish-blue-color: hsl(217, 19%, 35%);
     --desaturated-dark-blue-color: hsl(214, 17%, 51%);
@@ -26,6 +27,8 @@ body {
     min-height: 100vh;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    animation: fadeIn ease 1s;
 }
 /* ############## Main container CSS ####################### */
 .container {
@@ -33,8 +36,9 @@ body {
     height: 35rem;
     background-color: white;
     display: flex;
-    border-radius: 1.5rem;
+    border-radius: 1.25rem;
     box-shadow: 1.5rem 0.75rem 8rem rgba(109, 127, 151, 0.3);
+    margin: calc((100vh - 35rem - 1.75rem) / 2) auto;
 }
 
 /* ############## Main Image CSS ####################### */
@@ -43,16 +47,19 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: -2px 0;
-    border-top-left-radius: 1.5rem;
-    border-bottom-left-radius: 1.5rem;
+    border-top-left-radius: 1.25rem;
+    border-bottom-left-radius: 1.25rem;
+    animation: fadeIn ease 2s;
 }
 /* ############## Main Content  CSS ####################### */
 
 .main_cotent-container {
     width: 61%;
-    padding: 4rem 5rem;
 }
-
+.text_container {
+    padding: 4rem 5rem 1rem 5rem;
+    animation: fadeIn ease 3s;
+}
 .header {
     font-size: var(--large-font-size);
     font-weight: 700;
@@ -64,25 +71,151 @@ body {
     color: var(--desaturated-dark-blue-color);
 }
 .bot_content {
+    padding: 0 5rem 2rem 5rem;
+    margin-top: 2rem;
     color: var(--desaturated-dark-blue-color);
-    display: table;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    animation: fadeIn ease 4s;
+}
+.info_container {
+    display: flex;
 }
 
 .profile_img {
-    display: table-cell;
     border-radius: 50%;
     width: 5rem;
-}
-.profile-container {
-    display: table-row;
-}
-.info_container {
-    display: table-cell;
-}
-.name {
-    font-weight: 700;
+    margin-right: 2rem;
 }
 .share_icon {
-    display: table-cell;
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+    border-radius: 50%;
+    background: var(--light-grayish-blue-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
 }
+
+.share_icon:hover {
+    filter: invert(85%) saturate(200%) hue-rotate(180deg) brightness(250%);
+}
+.filter_flag {
+    filter: invert(85%) saturate(200%) hue-rotate(180deg) brightness(250%);
+}
+.name {
+    color: var(--very-dark-grayish-blue-color);
+    margin-bottom: 0.5rem;
+}
+
+/* ##############Share section CSS ####################### */
+.share_container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    max-height: 8.375rem;
+    border-radius: 1.25rem;
+    background: var(--very-dark-grayish-blue-color);
+    right: -9rem;
+    top: -10rem;
+    padding: 2rem 2rem 2rem 4rem;
+    font-size: var(--small-font-size);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+.share_container::after {
+    content: '';
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    bottom: -1.5rem;
+    left: 43%;
+    transform: rotate(45deg);
+    background-color: var(--very-dark-grayish-blue-color);
+}
+
+.show {
+    opacity: 1;
+    visibility: visible;
+}
+.share_container p {
+    text-transform: uppercase;
+    color: var(--grayish-blue-color);
+    letter-spacing: 0.5rem;
+    padding-right: 2rem;
+}
+ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+li {
+    padding-right: 2rem;
+}
+.icon:hover {
+    transform: scale(1.2);
+}
+/* ############## Media queryCSS ####################### */
+@media screen and (max-width: 875px) {
+    .header {
+        font-size: var(--medium-font-size);
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 40.875rem;
+        height: 64rem;
+
+        margin: calc((100vh - 64rem - 1.75rem) / 2) auto;
+    }
+
+    .main_image {
+        width: 100%;
+        height: 39%;
+        border-radius: 1.25rem 1.25rem 0 0;
+        object-position: 0 -2rem;
+    }
+    .main_cotent-container {
+        height: 61%;
+        width: 100%;
+        padding-bottom: 1rem;
+    }
+    .bot_content {
+        padding-bottom: 1rem;
+        width: inherit;
+    }
+    .share_container {
+        position: absolute;
+        width: 100%;
+        padding: 3rem 3.5rem 3rem;
+        border-radius: 0 0 1.25rem 1.25rem;
+        top: -1.5rem;
+        right: 0;
+        left: 0;
+    }
+    .share_container::after {
+        opacity: 0;
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    line-height: 1.75rem;
+    text-align: center;
+}
+
 /* ############## Additional animation CSS ####################### */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

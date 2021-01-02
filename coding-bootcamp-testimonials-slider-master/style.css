@@ -1,0 +1,221 @@
+:root {
+    box-sizing: border-box;
+    --large-font-size: 4rem;
+    --medium-font-size: 2.5rem;
+    --small-font-size: 2.25rem;
+    --dark-blue-color: hsl(240, 38%, 20%);
+    --grayish-blue-color: hsl(240, 18%, 77%);
+    font-size: 50%;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+/* ######################Overall  CSS###################### */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    width: 100%;
+    padding: 3rem;
+
+    background-image: url(./images/pattern-curve.svg);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    animation: fadeIn ease 1s;
+
+    font-size: var(--small-font-size);
+}
+
+/* ######################Slider CSS###################### */
+.slider {
+    display: block;
+
+    height: 100%;
+    width: 100%;
+    max-width: 106rem;
+
+    margin: 0 auto;
+    position: relative;
+    overflow: visible;
+}
+
+.slide {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+}
+
+/* ######################Text CSS###################### */
+.slide-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: auto;
+
+    padding: 3.75rem 5rem 0rem;
+
+    background-image: url(./images/pattern-quotes.svg);
+    background-repeat: no-repeat;
+    background-size: 10rem;
+    background-position: top center;
+}
+
+.testimonial-text {
+    color: var(--dark-blue-color);
+    font-weight: 200;
+    line-height: 4rem;
+    animation: fadeIn ease 2s;
+}
+
+.author-text {
+    margin-top: 20px;
+    font-weight: 700;
+    animation: fadeIn ease 3s;
+}
+
+.author-text span {
+    color: var(--grayish-blue-color);
+    font-weight: 500;
+    display: block;
+}
+
+/* ######################Picture CSS###################### */
+.slide-img {
+    width: 100%;
+    height: 100%;
+    padding: 5rem;
+
+    background-image: url(./images/pattern-bg.svg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 43.75rem 39.75rem;
+}
+
+.slide-img img {
+    margin-left: 2rem;
+    margin-top: 2rem;
+    width: 31.75rem;
+    animation: fadeIn ease 3s;
+}
+
+/* ######################Button CSS###################### */
+.buttons {
+    position: absolute;
+    left: 53%;
+    transform: translateX(-50%);
+    top: 285px;
+    width: 90px;
+    height: 45px;
+    box-shadow: -20px 12px 20px 0px hsla(240, 18%, 77%, 0.52);
+    border-radius: 4rem;
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.prev,
+.next {
+    width: 50%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.next,
+.prev {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.next {
+    background-image: url('./images/icon-next.svg');
+}
+
+.prev {
+    background-image: url('./images/icon-prev.svg');
+}
+
+.prev:hover,
+.next:hover {
+    background-color: antiquewhite;
+}
+/* ######################Media Query###################### */
+@media only screen and (min-width: 1120px) {
+    .slider {
+        max-width: 150rem;
+    }
+    .slide {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .slide-text {
+        background-size: 12rem 10rem;
+        background-position: 17% top;
+        padding: 6.5rem 0 0 0;
+
+        align-items: flex-start;
+    }
+
+    .testimonial-text {
+        font-size: var(--large-font-size);
+    }
+
+    .author-text {
+        font-size: var(--medium-font-size);
+    }
+
+    .author-text span {
+        display: inline;
+    }
+
+    .slide-img {
+        padding: 7rem 0rem 8rem 0rem;
+        background-size: 80rem 82rem;
+        background-position: -6rem 1.5rem;
+        z-index: -1;
+    }
+
+    .slide-img img {
+        margin-left: -5rem;
+        width: 67.5rem;
+    }
+
+    .inner-text-container {
+        width: 550px;
+    }
+
+    .buttons {
+        top: 580px;
+        left: calc(100% - 550px);
+    }
+}
+/* ######################Footer CSS###################### */
+
+.slide-2 {
+    display: none;
+}
+.attribution {
+    font-size: 11px;
+    line-height: 1.75rem;
+    text-align: center;
+}
+/* ######################Animation CSS###################### */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

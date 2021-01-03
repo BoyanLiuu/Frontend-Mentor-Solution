@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon-32x32.png"
+        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+
+        <title>Frontend Mentor | Pod request access landing page</title>
+    </head>
+    <body>
+        <article class="container">
+            <img
+                class="header-logo"
+                src="./assets/desktop/logo.svg"
+                alt="logo"
+            />
+            <div class="content-container">
+                <h1 class="heading">
+                    Publish your prodcasts <span>Everywhere </span>
+                </h1>
+                <p class="content">
+                    Upload your audio to Pod with a single click. We’ll then
+                    distribute your podcast to Spotify, Apple Podcasts, Google
+                    Podcasts, Pocket Casts and more!
+                </p>
+                <div class="img-container">
+                    <img
+                        class="spotify"
+                        src="./assets/desktop/spotify.svg"
+                        alt="Spotify"
+                    />
+                    <img
+                        class="apple"
+                        src="./assets/desktop/apple-podcast.svg"
+                        alt="Apple Podcasts"
+                    />
+                    <img
+                        class="google"
+                        src="./assets/desktop/google-podcasts.svg"
+                        alt="Google Podcasts"
+                    />
+                    <img
+                        class="pocket"
+                        src="./assets/desktop/pocket-casts.svg"
+                        alt="Pocket Cats"
+                    />
+                </div>
+
+                <form class="form-container">
+                    <input
+                        type="text"
+                        name="mail"
+                        id="mail"
+                        placeholder="Email adress"
+                    />
+                    <input
+                        class="submit-btn"
+                        type="submit"
+                        value="Request Access"
+                    />
+
+                    <span id="error-msg"></span>
+                </form>
+            </div>
+        </article>
+    </body>
+</html>

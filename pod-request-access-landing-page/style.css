@@ -1,0 +1,126 @@
+:root {
+    box-sizing: border-box;
+
+    --desktop-large-font-size: 6.5rem;
+    --medium-font-size: 2.25rem;
+    --small-font-size: 1.75rem;
+    --tablet-large-font-size: 6rem;
+    --phone-large-font-size: 3.25rem;
+    --phone-medium-font-size: 1.875rem;
+
+    --grass-green-color: hsl(157, 74%, 62%);
+    --bg-color: hsl(224, 35%, 11%);
+    --dark-grayish-color: hsl(210, 46%, 95%);
+    --bg-grayish-color: hsl(225, 26%, 23%);
+    --content-grayish-color: hsl(225, 40%, 83%);
+    --email-grayish-color: hsl(225, 21%, 45%);
+
+    font-size: 50%;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Chivo', sans-serif;
+    font-weight: 300;
+    height: 100vh;
+}
+
+/* ############## Main container CSS ####################### */
+.container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    border: 1px solid red;
+    align-items: center;
+
+    margin: 0 5rem;
+}
+.header-logo {
+    padding-top: 8rem;
+    margin-bottom: 10rem;
+}
+.heading {
+    text-align: center;
+
+    color: var(--grass-green-color);
+    font-weight: 300;
+    font-size: var(--phone-large-font-size);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 4.75rem;
+
+    padding-bottom: 2rem;
+}
+
+.heading span {
+    color: white;
+    display: block;
+}
+.content {
+    max-width: 40.875rem;
+
+    margin: 0 auto;
+    padding-bottom: 5rem;
+
+    color: var(--content-grayish-color);
+    font-size: var(--phone-medium-font-size);
+
+    text-align: center;
+    line-height: 3.5rem;
+}
+/* ############## Svg container CSS ####################### */
+
+.img-container {
+    display: flex;
+    justify-content: space-between;
+
+    max-width: 39.375rem;
+    padding-bottom: 5rem;
+}
+
+.spotify {
+    width: 7rem;
+    height: 2.125rem;
+}
+.apple {
+    width: 5.75rem;
+    height: 2.125rem;
+}
+.google {
+    width: 9.125rem;
+    height: 1.375rem;
+}
+.pocket {
+    width: 9.625rem;
+    height: 1.875rem;
+}
+/* ############## Form container CSS ####################### */
+.form-container {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 39.375rem;
+    max-height: 13.5rem;
+}
+.form-container input {
+    border-radius: 6rem;
+    height: 5.75rem;
+    border: none;
+    outline: none;
+}
+
+.form-container input[type='text'] {
+    background-color: var(--bg-grayish-color);
+}
+.form-container input[type='submit'] {
+    margin-top: 2rem;
+    background-color: var(--grass-green-color);
+}

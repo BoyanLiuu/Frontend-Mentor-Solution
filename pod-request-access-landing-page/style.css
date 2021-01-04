@@ -9,6 +9,7 @@
     --phone-medium-font-size: 1.875rem;
 
     --grass-green-color: hsl(157, 74%, 62%);
+    --light-green-color: #b3ffe2;
     --bg-color: hsl(224, 35%, 11%);
     --dark-grayish-color: hsl(210, 46%, 95%);
     --bg-grayish-color: hsl(225, 26%, 23%);
@@ -38,10 +39,20 @@ body {
     display: flex;
     height: 100%;
     flex-direction: column;
-    border: 1px solid red;
-    align-items: center;
 
-    margin: 0 5rem;
+    align-items: center;
+}
+
+.container::before {
+    content: '';
+    background-image: url('./assets/mobile/image-host.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.3;
 }
 .header-logo {
     padding-top: 8rem;
@@ -49,13 +60,13 @@ body {
 }
 .heading {
     text-align: center;
+    max-width: 42.625rem;
 
     color: var(--grass-green-color);
+
     font-weight: 300;
     font-size: var(--phone-large-font-size);
     text-transform: uppercase;
-    letter-spacing: 1px;
-    line-height: 4.75rem;
 
     padding-bottom: 2rem;
 }
@@ -64,16 +75,16 @@ body {
     color: white;
     display: block;
 }
+
 .content {
     max-width: 40.875rem;
 
-    margin: 0 auto;
     padding-bottom: 5rem;
+    text-align: center;
 
     color: var(--content-grayish-color);
     font-size: var(--phone-medium-font-size);
 
-    text-align: center;
     line-height: 3.5rem;
 }
 /* ############## Svg container CSS ####################### */
@@ -82,7 +93,9 @@ body {
     display: flex;
     justify-content: space-between;
 
-    max-width: 39.375rem;
+    margin: 0 auto;
+
+    max-width: 40.875rem;
     padding-bottom: 5rem;
 }
 
@@ -107,7 +120,9 @@ body {
     display: flex;
     flex-direction: column;
 
-    max-width: 39.375rem;
+    margin: 0 auto;
+
+    max-width: 40.875rem;
     max-height: 13.5rem;
 }
 .form-container input {
@@ -115,12 +130,122 @@ body {
     height: 5.75rem;
     border: none;
     outline: none;
+    font-size: var(--small-font-size);
+    font-weight: 700;
 }
 
+.form-container input[type='text']::placeholder {
+    color: var(--content-grayish-color);
+    opacity: 0.5;
+}
 .form-container input[type='text'] {
+    padding-left: 4rem;
+    color: #fff;
     background-color: var(--bg-grayish-color);
 }
 .form-container input[type='submit'] {
     margin-top: 2rem;
     background-color: var(--grass-green-color);
+    cursor: pointer;
 }
+
+.form-container input[type='submit']:hover {
+    background-color: var(--light-green-color);
+}
+
+#error-msg {
+    margin-top: 2rem;
+    text-align: center;
+    color: #fb3e3e;
+    font-size: var(--small-font-size);
+    font-weight: 700;
+}
+
+/* ############## Tablet CSS ####################### */
+@media (min-width: 768px) {
+    .container {
+        align-items: start;
+        margin-left: 7rem;
+        height: 125rem;
+
+        background-image: url('./assets/tablet/image-host.jpg'),
+            url('./assets/desktop/bg-pattern-dots.svg');
+        background-size: 61.375rem 95.875rem, 29rem 13rem;
+        background-position: top right, bottom left;
+        background-repeat: no-repeat;
+    }
+    .container::before {
+        opacity: 0;
+    }
+    .content-container {
+        display: flex;
+
+        flex-direction: column;
+        margin-top: 7rem;
+
+        max-width: 635px;
+
+        background-color: var(--bg-color);
+    }
+    .heading {
+        padding-bottom: 4rem;
+        padding-top: 11.625rem;
+        margin-right: 4.5rem;
+
+        max-width: 100%;
+        text-align: start;
+        font-size: var(--tablet-large-font-size);
+    }
+    .content {
+        text-align: start;
+
+        max-width: 55.625rem;
+        font-size: var(--medium-font-size);
+    }
+    .img-container {
+        max-width: 67rem;
+        margin: 0 0;
+        padding: 0 0;
+
+        order: 1;
+    }
+
+    .spotify {
+        width: 12rem;
+        height: 3.625rem;
+    }
+    .apple {
+        width: 9.75rem;
+        height: 3.625rem;
+    }
+    .google {
+        width: 15.625rem;
+        height: 2.25rem;
+    }
+    .pocket {
+        width: 16.125rem;
+        height: 3.25rem;
+    }
+    .form-container {
+        margin-left: 0;
+        margin-bottom: 6rem;
+        position: relative;
+        margin-right: 0;
+
+        max-width: 53.375rem;
+        height: 7rem;
+    }
+    .form-container input[type='text'] {
+        height: 100%;
+    }
+    .form-container input[type='submit'] {
+        position: absolute;
+        right: 5px;
+        top: -11px;
+
+        width: 20.25rem;
+        height: 5.75rem;
+    }
+}
+
+/* ############## Desktop CSS ####################### */

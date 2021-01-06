@@ -249,3 +249,41 @@ body {
 }
 
 /* ############## Desktop CSS ####################### */
+@media (min-width: 1270px) {
+    body {
+        height: calc(100vh - 16.25rem);
+    }
+    .header-logo {
+        padding-top: 0;
+        margin-bottom: 4rem;
+        margin-top: -3.5rem;
+        width: 16.875rem;
+    }
+    .container {
+        height: 80rem;
+        margin-left: 21rem;
+        margin-top: 16.25rem;
+
+        background-image: url('./assets/desktop/image-host.jpg'),
+            url('./assets/desktop/bg-pattern-dots.svg');
+        background-size: 111rem 80rem;
+        background-position: top right, top right;
+        background-repeat: no-repeat;
+    }
+    .container::after {
+        content: url('./assets/desktop/bg-pattern-dots.svg');
+        position: absolute;
+        right: 0;
+        top: 89.75rem;
+    }
+    .content-container {
+        max-width: 100%;
+        width: 90.375rem;
+    }
+    .heading {
+        font-size: var(--desktop-large-font-size);
+    }
+    .content {
+        font-size: var(--medium-font-size);
+    }
+}

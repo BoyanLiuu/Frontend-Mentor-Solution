@@ -1,0 +1,215 @@
+:root {
+    box-sizing: border-box;
+    --phone-large-font-size: 4rem;
+    --phone-medium-font-size: 1.4rem;
+    --phone-small-font-size: 1.3rem;
+
+    --desktop-large-font-size: 6.4rem;
+    --desktop-small-font-size: 1.6rem;
+
+    --desaturated-red-paragraph: hsl(0, 36%, 70%);
+    --soft-red-button: hsl(0, 93%, 68%);
+    --dark-grayish-red: hsl(0, 6%, 24%);
+    --light-grayish-blue-color: hsl(210, 46%, 95%);
+
+    font-size: 62.5%;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(135deg, (0, 0%, 100%), hsl(0, 100%, 98%));
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* 
+General idea: Start with phone design 
+and move toward to Desktop view, 
+It is mobile first design concept.
+In the moblie design: We use flex box,
+*/
+/* ########### Container CSS########## */
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: left;
+    margin-left: 1.2rem;
+    order: -1;
+}
+.logo {
+    width: 10rem;
+    margin-bottom: 3.2rem;
+}
+
+/* Without fix length, it will stretch due to flexbox */
+.hero-img {
+    background: url('./images/hero-mobile.jpg');
+    max-width: 37.5rem;
+    height: 25rem;
+    margin-bottom: 6.4rem;
+}
+/* ########### Main content CSS########## */
+.content-container {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 3.1rem;
+    text-align: center;
+
+    max-width: 37.5rem;
+}
+.main--content-container {
+    max-width: 31.1rem;
+}
+.main-text {
+    font-size: var(--phone-large-font-size);
+    text-transform: uppercase;
+    line-height: 4.2rem;
+    letter-spacing: 1rem;
+    margin-bottom: 1.6rem;
+}
+.highlight {
+    color: var(--desaturated-red-paragraph);
+    font-weight: 300;
+}
+.sub-text {
+    font-size: var(--phone-medium-font-size);
+    color: var(--desaturated-red-paragraph);
+    line-height: 2.2rem;
+    margin-bottom: 3.2rem;
+}
+
+/* ########### Form  CSS########## */
+.bottom-container {
+    position: relative;
+    margin-bottom: 8rem;
+}
+.form-container {
+    margin-bottom: 0.1;
+}
+.form-container input[type='mail'] {
+    width: 100%;
+    height: 4.8rem;
+    border-radius: 4rem;
+    padding-left: 2rem;
+    border: 1px solid var(--desaturated-red-paragraph);
+    outline: none;
+}
+.form-container input[type='mail']::placeholder {
+    color: var(--desaturated-red-paragraph);
+    opacity: 0.5;
+}
+
+.icon-container {
+    position: absolute;
+    display: flex;
+    height: 4.8rem;
+    align-items: center;
+
+    top: 0.1rem;
+    right: 0;
+}
+.arrow-icon {
+    background-image: linear-gradient(
+        135deg,
+        hsl(0, 80%, 86%),
+        hsl(0, 74%, 74%)
+    );
+    border-radius: 4rem;
+    padding: 1.3rem 2.6rem;
+
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+.error-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-right: 0.8rem;
+    opacity: 0;
+}
+#error-msg {
+    margin-left: 2rem;
+    text-align: start;
+    color: #fb3e3e;
+    font-size: var(--phone-small-font-size);
+}
+.flag {
+    opacity: 1;
+}
+
+/* ########### Desktop CSS########## */
+@media only screen and (min-width: 1285px) {
+    .container {
+        background: url('./images/hero-desktop.jpg');
+        background-repeat: no-repeat;
+        background-size: 61rem 80rem;
+
+        background-position: top right;
+
+        align-items: start;
+    }
+    .content-container {
+        width: 80%;
+        height: 100%;
+        text-align: start;
+    }
+    header {
+        width: 15.7rem;
+        height: 3.3rem;
+        margin-left: 0;
+    }
+    .logo {
+        width: 100%;
+        height: 100%;
+    }
+    .hero-img {
+        display: none;
+    }
+
+    .content-container {
+        margin: 6.6rem 0 0 16.5rem;
+    }
+
+    .main-content-container {
+        width: 44.5rem;
+        max-width: 44.5rem;
+        height: 40.4rem;
+    }
+    .main-text {
+        margin-top: 13.6rem;
+        font-size: var(--desktop-large-font-size);
+        line-height: 7.1rem;
+        letter-spacing: 1.7rem;
+    }
+    .sub-text {
+        font-size: var(--desktop-small-font-size);
+        line-height: 2.8rem;
+    }
+}
+
+@media only screen and (min-width: 1285px) and (min-height: 800px) {
+    .container {
+        background: url('./images/hero-desktop.jpg');
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        background-position: top right;
+
+        align-items: start;
+    }
+}
+
+/* ########### Animation CSS########## */

@@ -126,12 +126,17 @@ form input {
     position: absolute;
     content: '';
     background-image: url('./images/icon-error.svg');
-    top: 50%;
+    top: 36%;
     transform: translateY(-50%);
     left: 25rem;
     width: 2.4rem;
     height: 2.4rem;
     opacity: 0;
+}
+
+.first-icon {
+    top: 55%;
+    transform: translateY(-50%);
 }
 .error-message {
     max-width: 27.9rem;

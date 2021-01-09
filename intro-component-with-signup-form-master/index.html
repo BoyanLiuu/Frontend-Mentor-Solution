@@ -22,60 +22,89 @@
     <body>
         <div class="container">
             <article class="inner-container">
-                <h1 class="title">Learn to code by watching others</h1>
-                <p class="main-text">
-                    See how experienced developers solve problems in real-time.
-                    Watching scripted tutorials is great, but understanding how
-                    developers think is invaluable.
-                </p>
-                <p class="sub-text">
-                    <span class="highlight">Try it free 7 days</span> then
-                    $20/mo. thereafter
-                </p>
-                <div class="form-container">
-                    <form id="form">
-                        <input
-                            aria-label="first name"
-                            type="text"
-                            name="first-name"
-                            id="first-name"
-                            placeholder="First Name"
-                        />
-                        <input
-                            aria-label="last name"
-                            type="text"
-                            name="last-name"
-                            id="last-name"
-                            placeholder="Last Name"
-                        />
-                        <input
-                            aria-label="email"
-                            type="email"
-                            name="email"
-                            id="email"
-                            placeholder="Email adress"
-                        />
-                        <input
-                            aria-label="password"
-                            type="text"
-                            name="password"
-                            id="password"
-                            placeholder="Password"
-                        />
-                        <br />
-                        <input
-                            id="submit-btn"
-                            type="submit"
-                            value="claim your free trial"
-                        />
-                    </form>
-
-                    <p class="info">
-                        By clicking the button, you are agreeing to our
-                        <span class="red"> Terms and Services </span>
+                <div class="left-container-for-desktop-view">
+                    <h1 class="title">Learn to code by watching others</h1>
+                    <p class="main-text">
+                        See how experienced developers solve problems in
+                        real-time. Watching scripted tutorials is great, but
+                        understanding how developers think is invaluable.
                     </p>
+                </div>
+                <div class="right-container-for-desktop-view">
+                    <p class="sub-text">
+                        <span class="highlight">Try it free 7 days</span> then
+                        $20/mo. thereafter
+                    </p>
+                    <div class="form-container">
+                        <form id="form">
+                            <div class="input-container">
+                                <input
+                                    aria-label="first name"
+                                    type="text"
+                                    name="first-name"
+                                    id="first-name"
+                                    placeholder="First Name"
+                                />
+                                <div class="error-icon"></div>
+                                <div class="error-message">
+                                    First Name cannot be empty
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <input
+                                    aria-label="last name"
+                                    type="text"
+                                    name="last-name"
+                                    id="last-name"
+                                    placeholder="Last Name"
+                                />
+                                <div class="error-icon"></div>
+                                <div class="error-message">
+                                    Last Name cannot be empty
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <input
+                                    aria-label="email"
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    placeholder="Email adress"
+                                />
+                                <div class="error-icon"></div>
+                                <div class="error-message">
+                                    Looks like this is not an email
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <input
+                                    aria-label="password"
+                                    type="text"
+                                    name="password"
+                                    id="password"
+                                    placeholder="Password"
+                                />
+                                <div class="error-icon"></div>
+                                <div class="error-message">
+                                    Password can not be empty
+                                </div>
+                            </div>
+                            <br />
+                            <input
+                                id="submit-btn"
+                                type="submit"
+                                value="claim your free trial"
+                            />
+                        </form>
+
+                        <p class="info">
+                            By clicking the button, you are agreeing to our
+                            <span class="red"> Terms and Services </span>
+                        </p>
+                    </div>
                 </div>
             </article>
         </div>
+        <script src="index.js"></script>
     </body>
 </html>

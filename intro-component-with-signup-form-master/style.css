@@ -1,6 +1,6 @@
 :root {
     box-sizing: border-box;
-    --xxlarge-font-size: 5.5rem;
+    --xxlarge-font-size: 5rem;
     --xlarge-font-size: 2.8rem;
     --large-font-size: 1.6rem;
     --medium-font-size: 1.5rem;
@@ -47,7 +47,7 @@ body {
 
 .title {
     font-size: var(--xlarge-font-size);
-    font-weight: 400;
+    font-weight: 700;
     line-height: 3.6rem;
     letter-spacing: -0.03rem;
     text-align: center;
@@ -90,7 +90,9 @@ body {
 .form-container {
     background-color: white;
     border-radius: 0.5rem;
+    margin-bottom: 2rem;
 }
+
 form {
     text-align: center;
 }
@@ -111,6 +113,35 @@ form input {
     width: 100%;
     max-width: 27.9rem;
     height: 5.6rem;
+    position: relative;
+}
+.input-container {
+    position: relative;
+}
+
+.error-icon {
+    position: absolute;
+    content: '';
+    background-image: url('./images/icon-error.svg');
+    top: 50%;
+    transform: translateY(-50%);
+    left: 25rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    opacity: 0;
+}
+.error-message {
+    max-width: 27.9rem;
+    text-align: right;
+    font-size: var(--xssmall-font-size);
+    color: var(--red-color);
+    line-height: 1.6rem;
+    margin-top: 0.6rem;
+    margin-left: 2.2rem;
+    opacity: 0;
+}
+.flag {
+    opacity: 1;
 }
 
 input[type='text']:focus,
@@ -146,3 +177,58 @@ form input[type='submit']:hover {
     color: var(--red-color);
 }
 /* ########## Desktop  CSS  ########## */
+@media only screen and (min-width: 1285px) {
+    body {
+        background-image: url('./images/bg-intro-desktop.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .inner-container {
+        display: flex;
+        max-width: 110rem;
+        padding-top: 12.1rem;
+        margin-top: 0;
+    }
+    .left-container-for-desktop-view {
+        display: flex;
+        flex-direction: column;
+        max-width: 52.5rem;
+
+        margin: 16.9rem 4.5rem 0 0;
+    }
+    .right-container-for-desktop-view {
+        max-width: 54rem;
+        max-height: 47.4rem;
+    }
+    .title {
+        font-size: var(--xxlarge-font-size);
+        font-weight: 700;
+        line-height: 5.5rem;
+        letter-spacing: -0.05rem;
+        padding-bottom: 2.1rem;
+    }
+    .main-text {
+        text-align: start;
+        max-width: 100%;
+        max-height: 7.8rem;
+        font-size: var(--large-font-size);
+    }
+    .right-container-for-desktop-view {
+        max-width: 54rem;
+        max-height: 55.8rem;
+    }
+    .sub-text {
+        width: 55rem;
+        padding: 1.7rem 10.9rem 1.7rem 10.9rem;
+        font-size: var(--medium-font-size);
+    }
+
+    form input {
+        max-width: 46rem;
+    }
+
+    .info {
+        max-width: 100%;
+        padding-bottom: 4rem;
+    }
+}

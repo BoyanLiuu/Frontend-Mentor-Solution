@@ -106,7 +106,7 @@ form input::placeholder {
 
 form input {
     padding-left: 1.9rem;
-    margin-top: 2.4rem;
+
     outline: none;
     border: 1px solid lightgray;
     border-radius: 0.5rem;
@@ -114,6 +114,9 @@ form input {
     max-width: 27.9rem;
     height: 5.6rem;
     position: relative;
+}
+#first-name {
+    margin-top: 4rem;
 }
 .input-container {
     position: relative;
@@ -177,7 +180,7 @@ form input[type='submit']:hover {
     color: var(--red-color);
 }
 /* ########## Desktop  CSS  ########## */
-@media only screen and (min-width: 1285px) {
+@media only screen and (min-width: 1100px) {
     body {
         background-image: url('./images/bg-intro-desktop.png');
         background-repeat: no-repeat;
@@ -206,6 +209,7 @@ form input[type='submit']:hover {
         line-height: 5.5rem;
         letter-spacing: -0.05rem;
         padding-bottom: 2.1rem;
+        text-align: start;
     }
     .main-text {
         text-align: start;
@@ -222,7 +226,9 @@ form input[type='submit']:hover {
         padding: 1.7rem 10.9rem 1.7rem 10.9rem;
         font-size: var(--medium-font-size);
     }
-
+    .form-container {
+        margin-bottom: 0;
+    }
     form input {
         max-width: 46rem;
     }
@@ -230,5 +236,16 @@ form input[type='submit']:hover {
     .info {
         max-width: 100%;
         padding-bottom: 4rem;
+    }
+
+    .error-icon {
+        top: 50%;
+        transform: translateY(-50%);
+        left: 25rem;
+    }
+    .error-message {
+        max-width: 46rem;
+        text-align: right;
+        margin-left: 4.2rem;
     }
 }

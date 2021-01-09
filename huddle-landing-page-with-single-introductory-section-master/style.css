@@ -27,8 +27,11 @@ body {
     background-color: var(--bg-violet-color);
     background-image: url('./images/bg-mobile.svg');
     background-repeat: no-repeat;
-    background-position: top center;
+    /* background-position: left top;
+    background-size: contain; */
     background-size: contain;
+    /* background-size: 65rem 38rem; */
+    background-position: 0rem -9rem;
 }
 .container {
     width: 100%;
@@ -118,6 +121,10 @@ body {
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1000px) {
+    body {
+        background-size: 100rem 70rem;
+        background-position: 0 -9rem;
+    }
     .inner-container {
         max-width: 68rem;
 
@@ -132,6 +139,8 @@ body {
     body {
         background-color: var(--bg-violet-color);
         background-image: url('./images/bg-desktop.svg');
+        background-size: 90vw 100vh;
+        background-position: 0rem 0rem;
     }
     .inner-container {
         max-width: 144rem;
@@ -147,7 +156,7 @@ body {
         margin-bottom: 2.7rem;
     }
     .illustration {
-        max-width: 54%;
+        max-width: 55%;
         margin-right: 5.9rem;
     }
     .main-content-container {

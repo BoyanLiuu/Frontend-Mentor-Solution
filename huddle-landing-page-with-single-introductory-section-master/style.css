@@ -1,0 +1,187 @@
+:root {
+    box-sizing: border-box;
+    --phone-large-font-size: 2.4rem;
+    --phone-medium-font-size: 1.6rem;
+    --phone-small-font-size: 1.2rem;
+
+    --desktop-large-font-size: 4rem;
+    --desktop-small-font-size: 1.8rem;
+
+    --bg-violet-color: hsl(257, 40%, 49%);
+    --soft-magenta: #ff52c1;
+    --dark-grayish-red: hsl(0, 6%, 24%);
+    --light-grayish-blue-color: hsl(210, 46%, 95%);
+
+    font-size: 62.5%;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-violet-color);
+    background-image: url('./images/bg-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inner-container {
+    max-width: 30.4rem;
+    width: 100%;
+    height: 100%;
+    padding-top: 4rem;
+}
+.logo {
+    width: 12rem;
+    margin-bottom: 6.8rem;
+}
+.illustration {
+    width: 100%;
+}
+
+.heading {
+    max-width: 28rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: var(--phone-large-font-size);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    line-height: 3.6rem;
+    margin-bottom: 1.6rem;
+}
+.main-text {
+    text-align: center;
+    font-size: var(--phone-medium-font-size);
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    line-height: 2.4rem;
+    margin-bottom: 2.3rem;
+}
+.register-btn {
+    display: block;
+    max-width: 20rem;
+    font-size: var(--phone-medium-font-size);
+    font-family: 'Open Sans', sans-serif;
+    padding: 0.7rem 6.8rem 0.7rem 6.8rem;
+    outline: none;
+    border: none;
+    border-radius: 2rem;
+    margin: 0 auto;
+    color: var(--bg-violet-color);
+    margin-bottom: 6.5rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.register-btn:hover {
+    color: white;
+
+    background-color: var(--soft-magenta);
+}
+.social-icons {
+    max-width: 11rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.5s ease;
+}
+.icon-border {
+    width: 2.8rem;
+    height: 2.8rem;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: var(--bg-violet-color);
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+.fab {
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+.icon-border:hover {
+    background-color: var(--bg-violet-color);
+    color: var(--soft-magenta);
+    border-color: var(--soft-magenta);
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+    .inner-container {
+        max-width: 68rem;
+
+        margin: 0 auto;
+    }
+    .container-for-desktop {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    body {
+        background-color: var(--bg-violet-color);
+        background-image: url('./images/bg-desktop.svg');
+    }
+    .inner-container {
+        max-width: 144rem;
+        padding: 6.4rem 0 0 8rem;
+    }
+    .logo {
+        width: 20rem;
+        margin-bottom: 10.4rem;
+    }
+    .container-for-desktop {
+        max-width: 127.5rem;
+        display: flex;
+        margin-bottom: 2.7rem;
+    }
+    .illustration {
+        max-width: 54%;
+        margin-right: 5.9rem;
+    }
+    .main-content-container {
+        max-width: 52rem;
+    }
+    .heading {
+        font-size: var(--desktop-large-font-size);
+        max-width: 48.7rem;
+        line-height: 6rem;
+        text-align: start;
+    }
+    .main-text {
+        font-size: var(--desktop-small-font-size);
+        line-height: 2.7rem;
+        text-align: start;
+    }
+    .register-btn {
+        border-radius: 2.8rem;
+        margin: 0 0;
+        height: 5.6rem;
+        box-shadow: 2px 4px 9px 3px rgba(0, 0, 0, 0.26);
+    }
+    .social-icons {
+        width: 15.2rem;
+        max-width: 15.2rem;
+        height: 40px;
+        float: right;
+        margin-top: 1rem;
+        margin-right: 6rem;
+    }
+    .icon-border {
+        width: 4rem;
+        height: 4rem;
+        font-size: 2em;
+        padding-top: 0.5rem;
+    }
+}

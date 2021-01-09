@@ -239,9 +239,14 @@ form input[type='submit']:hover {
     }
 
     .error-icon {
-        top: 50%;
+        top: 35%;
         transform: translateY(-50%);
-        left: 25rem;
+        left: 43rem;
+    }
+    .first-icon {
+        top: 55%;
+        transform: translateY(-50%);
+        left: 43rem;
     }
     .error-message {
         max-width: 46rem;

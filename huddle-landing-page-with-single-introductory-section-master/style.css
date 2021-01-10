@@ -31,7 +31,7 @@ body {
     background-size: contain; */
     background-size: contain;
     /* background-size: 65rem 38rem; */
-    background-position: 0rem -9rem;
+    background-position: 0rem -6rem;
 }
 .container {
     width: 100%;
@@ -43,8 +43,9 @@ body {
 .inner-container {
     max-width: 30.4rem;
     width: 100%;
-    height: 100%;
+    height: auto;
     padding-top: 4rem;
+    padding-bottom: 2rem;
 }
 .logo {
     width: 12rem;
@@ -90,7 +91,6 @@ body {
 
 .register-btn:hover {
     color: white;
-
     background-color: var(--soft-magenta);
 }
 .social-icons {
@@ -114,6 +114,9 @@ body {
     cursor: pointer;
     margin-top: 0.5rem;
 }
+.icon-link {
+    color: white;
+}
 .icon-border:hover {
     background-color: var(--bg-violet-color);
     color: var(--soft-magenta);
@@ -124,6 +127,9 @@ body {
     body {
         background-size: 100rem 70rem;
         background-position: 0 -9rem;
+    }
+    .container {
+        height: 100%;
     }
     .inner-container {
         max-width: 68rem;

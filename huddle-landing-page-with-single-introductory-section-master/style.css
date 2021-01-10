@@ -106,7 +106,6 @@ body {
     font-size: 1.5em;
     text-align: center;
     background-color: var(--bg-violet-color);
-    color: white;
     border: 1px solid white;
     border-radius: 50%;
 }

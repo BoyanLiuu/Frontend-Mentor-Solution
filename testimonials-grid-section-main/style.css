@@ -1,0 +1,150 @@
+:root {
+    box-sizing: border-box;
+    --large-font-size: 2rem;
+    --medium-font-size: 1.3rem;
+    --small-font-size: 1.1rem;
+
+    --moderate-violet-color: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue-color: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue-color: hsl(219, 29%, 14%);
+    --light-gray-color: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+
+    font-size: 62.5%;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--light-grayish-blue);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.inner-container {
+    margin: 7.1rem 0;
+    max-width: 32.7rem;
+
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-areas:
+        'section1'
+        'section2'
+        'section3'
+        'section4'
+        'section5';
+    row-gap: 2.4rem;
+}
+
+.card {
+    padding: 3.2rem;
+    box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.25);
+    border-radius: 0.8rem;
+}
+.card1 {
+    background-color: var(--moderate-violet-color);
+    background-image: url('./images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: 90% 0;
+    color: white;
+    grid-area: section1;
+}
+.card2 {
+    background-color: var(--very-dark-grayish-blue-color);
+    color: white;
+    grid-area: section2;
+}
+.card3 {
+    background-color: white;
+    color: var(--very-dark-blackish-blue-color);
+    grid-area: section3;
+}
+.card4 {
+    background-color: var(--very-dark-blackish-blue-color);
+    color: white;
+    grid-area: section4;
+}
+.card5 {
+    background-color: white;
+    color: var(--very-dark-blackish-blue-color);
+    grid-area: section5;
+}
+
+.top-section {
+    margin-bottom: 1.8rem;
+}
+.person-logo {
+    border-radius: 50%;
+    width: 2.8rem;
+    margin-right: 1.7rem;
+}
+.card1 .person-logo {
+    border: solid #a775f1;
+}
+.card4 .person-logo {
+    border: solid #733fc8;
+}
+.info-container {
+    display: inline-block;
+}
+.name {
+    font-size: var(--medium-font-size);
+    font-weight: 600;
+
+    line-height: 1.3rem;
+    margin-bottom: 0.4rem;
+}
+.title {
+    font-size: var(--small-font-size);
+    font-weight: 500;
+    opacity: 0.5;
+}
+
+.mid-section {
+    font-size: var(--large-font-size);
+    font-weight: 600;
+    line-height: 2.4rem;
+
+    margin-bottom: 1.6rem;
+}
+
+.bot-section {
+    font-size: var(--medium-font-size);
+    font-weight: 500;
+    line-height: 1.8rem;
+    opacity: 0.5;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1100px) {
+    .inner-container {
+        max-width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .inner-container {
+        align-items: center;
+    }
+
+    .inner-container {
+        max-width: 110rem;
+        grid-template-columns: repeat(4, 25.5rem);
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            'section1 section1 section2 section5'
+            'section3 section4 section4 section5';
+        gap: 2.4rem 2.4rem;
+    }
+}

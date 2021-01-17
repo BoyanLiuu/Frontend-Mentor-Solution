@@ -75,7 +75,7 @@ function BottomSection() {
     return (
         <StyledBottomSection>
             <p className="bottom-title"> Overview - Today</p>
-            {cardSection}
+            <div className="card-section-container">{cardSection}</div>
         </StyledBottomSection>
     );
 }

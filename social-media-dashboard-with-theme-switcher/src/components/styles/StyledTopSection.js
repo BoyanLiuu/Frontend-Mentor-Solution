@@ -5,7 +5,7 @@ export const StyledTopSectionContainer = styled.div`
     flex-direction: column;
     align-items: center;
 
-    .card-container {
-        border: 1px solid red;
+    @media screen and (min-width: 1110px) {
+        flex-direction: row;
     }
 `;

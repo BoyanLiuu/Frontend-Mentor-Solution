@@ -1,9 +1,12 @@
 import { StyledHeader } from '../styles/StyledHeader';
-function Header() {
+function Header({ toggle }) {
     return (
         <StyledHeader>
-            <h1 className="title">Social Media DashBoard</h1>
-            <h2 className="data-info">Total Followers: 23,004</h2>
+            <div className="info-container">
+                <h1 className="title">Social Media DashBoard</h1>
+                <h2 className="data-info">Total Followers: 23,004</h2>
+            </div>
+
             <hr className="break-line"></hr>
             <div className="dark-mode-container">
                 <span className="dark-mode"> Dark Mode </span>
@@ -13,6 +16,7 @@ function Header() {
                         type="checkbox"
                         className="dark-mode-checkbox"
                         id="checkbox"
+                        onClick={() => toggle()}
                     />
                 </span>
             </div>

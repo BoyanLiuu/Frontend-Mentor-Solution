@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledMainCardContainer = styled.div`
     //Light Grayish Blue (Card BG)
-    background-color: hsl(227, 47%, 96%);
+    background-color: ${(props) => props.theme.cardBg};
     border-radius: 0.5rem;
     width: 32.6rem;
     text-align: center;
@@ -57,23 +57,21 @@ export const StyledMainCardContainer = styled.div`
         line-height: 1.5rem;
         align-self: flex-end;
         font-weight: 700;
-        // Dark Grayish Blue (Text)
-        color: hsl(228, 12%, 44%);
+        color: ${(props) => props.theme.subText};
     }
     .number-text {
         font-size: 5.6rem;
         line-height: 4.8rem;
         letter-spacing: -2px;
         margin-bottom: 0.9rem;
+        color: ${(props) => props.theme.mainText};
     }
     .sub-text {
         font-size: 1.2rem;
         font-weight: 400;
         line-height: 1.5rem;
         letter-spacing: 0.5rem;
-
-        // Dark Grayish Blue (Text)
-        color: hsl(228, 12%, 44%);
+        color: ${(props) => props.theme.subText};
         margin-bottom: 2.5rem;
     }
     .bottom-section {
@@ -85,5 +83,18 @@ export const StyledMainCardContainer = styled.div`
     }
     .direction-icon {
         vertical-align: middle;
+    }
+
+    @media only screen and (min-width: 550px) and (max-width: 1100px) {
+        width: 50vw;
+    }
+
+    @media screen and (min-width: 1110px) {
+        width: 25.5rem;
+        margin-right: 3rem;
+
+        &.youtube {
+            margin-right: 0;
+        }
     }
 `;

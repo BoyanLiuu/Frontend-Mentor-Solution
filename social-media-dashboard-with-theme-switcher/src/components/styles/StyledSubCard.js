@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledSubCardContainer = styled.div`
-    background-color: hsl(227, 47%, 96%);
+    background-color: ${(props) => props.theme.cardBg};
     border-radius: 0.5rem;
     height: 12.5rem;
     padding: 2.7rem 3rem 0 2.5rem;
@@ -10,6 +10,7 @@ export const StyledSubCardContainer = styled.div`
         font-size: 1.4rem;
         line-height: 1.7rem;
         font-weight: 700;
+        color: ${(props) => props.theme.subText};
     }
     img {
         float: right;
@@ -30,7 +31,7 @@ export const StyledSubCardContainer = styled.div`
         font-size: 3.2rem;
         font-weight: 700;
         line-height: 3.9rem;
-        color: hsl(230, 17%, 14%);
+        color: ${(props) => props.theme.mainText};
     }
     .direction-icon {
         vertical-align: middle;
@@ -39,5 +40,14 @@ export const StyledSubCardContainer = styled.div`
         position: absolute;
         right: 0;
         bottom: 5px;
+    }
+
+    @media only screen and (min-width: 550px) and (max-width: 1100px) {
+        width: 50vw;
+    }
+
+    @media screen and (min-width: 1110px) {
+        width: 25.5rem;
+        margin-right: 3rem;
     }
 `;

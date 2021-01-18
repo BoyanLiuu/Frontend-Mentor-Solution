@@ -6,6 +6,8 @@ export const StyledSubCardContainer = styled.div`
     height: 12.5rem;
     padding: 2.7rem 3rem 0 2.5rem;
     margin-bottom: 1.6rem;
+    transition: all 300ms !important;
+
     .title {
         font-size: 1.4rem;
         line-height: 1.7rem;
@@ -42,11 +44,11 @@ export const StyledSubCardContainer = styled.div`
         bottom: 5px;
     }
 
-    @media only screen and (min-width: 550px) and (max-width: 1100px) {
-        width: 50vw;
+    @media only screen and (min-width: 640px) and (max-width: 1200px) {
+        width: auto;
     }
 
-    @media screen and (min-width: 1110px) {
+    @media screen and (min-width: 1200px) {
         width: 25.5rem;
         margin-right: 3rem;
     }

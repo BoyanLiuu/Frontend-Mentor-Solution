@@ -19,7 +19,8 @@ export const StyledHeader = styled.div`
     }
     .break-line {
         margin-bottom: 1.6rem;
-        border-top: 1px solid ${(props) => props.theme.hrColor};
+        color: ${(props) => props.theme.hrColor};
+        opacity: 0.4;
     }
     .data-info {
         margin: 0.4rem 0 2.4rem 0;
@@ -63,28 +64,11 @@ export const StyledHeader = styled.div`
     .dark-mode-checkbox:checked {
         background: ${(props) => props.theme.togglerColor};
     }
-    @media screen and (min-width: 1110px) {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 4rem;
-        .title {
-            font-size: 2.8rem;
-            line-height: 3.4rem;
-        }
-
-        .break-line {
-            display: none;
-        }
-
-        .dark-mode-container {
-            margin-bottom: 0;
-        }
-        .data-info {
-            margin-bottom: 0;
-        }
+    @media only screen and (min-width: 640px) and (max-width: 1200px) {
+        width: 80vw;
     }
 
-    @media screen and (min-width: 1110px) {
+    @media screen and (min-width: 1200px) {
         display: flex;
         justify-content: space-between;
         margin-bottom: 4rem;

@@ -5,10 +5,10 @@ export const StyledHomePageContainer = styled.div`
     padding-top: 3.6rem;
     margin-bottom: 3.6rem;
 
-    @media only screen and (min-width: 550px) and (max-width: 1100px) {
-        width: 50vw;
+    @media only screen and (min-width: 640px) and (max-width: 1200px) {
+        width: 80vw;
     }
-    @media screen and (min-width: 1110px) {
+    @media screen and (min-width: 1200px) {
         width: 110rem;
     }
 `;

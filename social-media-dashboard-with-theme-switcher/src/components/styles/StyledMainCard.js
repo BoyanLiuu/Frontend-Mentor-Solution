@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const StyledMainCardContainer = styled.div`
-    //Light Grayish Blue (Card BG)
     background-color: ${(props) => props.theme.cardBg};
     border-radius: 0.5rem;
     width: 32.6rem;
     text-align: center;
     margin-bottom: 2.4rem;
     padding: 3.2rem 0 2.4rem 0;
+    transition: all 300ms !important;
 
     &.facebook {
         //facebook color
@@ -65,6 +65,7 @@ export const StyledMainCardContainer = styled.div`
         letter-spacing: -2px;
         margin-bottom: 0.9rem;
         color: ${(props) => props.theme.mainText};
+        transition: all 300ms !important;
     }
     .sub-text {
         font-size: 1.2rem;
@@ -85,16 +86,12 @@ export const StyledMainCardContainer = styled.div`
         vertical-align: middle;
     }
 
-    @media only screen and (min-width: 550px) and (max-width: 1100px) {
-        width: 50vw;
+    @media only screen and (min-width: 640px) and (max-width: 1200px) {
+        margin-bottom: 0;
+        width: auto;
     }
 
-    @media screen and (min-width: 1110px) {
+    @media screen and (min-width: 1200px) {
         width: 25.5rem;
-        margin-right: 3rem;
-
-        &.youtube {
-            margin-right: 0;
-        }
     }
 `;

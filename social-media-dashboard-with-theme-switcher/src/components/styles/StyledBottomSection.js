@@ -12,7 +12,15 @@ export const StyledBottomSection = styled.div`
         margin-bottom: 2.7rem;
     }
 
-    @media screen and (min-width: 1110px) {
+    @media only screen and (min-width: 640px) and (max-width: 1200px) {
+        width: 100%;
+        .card-section-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 2.4rem 2.4rem;
+        }
+    }
+    @media screen and (min-width: 1200px) {
         .card-section-container {
             display: grid;
             grid-template-columns: repeat(4, 25.5rem);

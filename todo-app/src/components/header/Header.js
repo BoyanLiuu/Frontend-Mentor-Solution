@@ -15,17 +15,20 @@ const HeaderDiv = styled.div`
     .switch-theme-logo {
         width: 2.5rem;
         height: 2.5rem;
+        outline: none;
+        cursor: pointer;
         background-image: ${(props) => `url(${props.src})`};
         background-size: cover;
     }
 `;
 
-const Header = ({ name }) => {
+const Header = ({ name, toggle }) => {
     const logo = require(`../../assets/img/${name}.svg`).default;
+
     return (
         <HeaderDiv src={logo}>
             <h1 className="title">Todo</h1>
-            <div className="switch-theme-logo"></div>
+            <div className="switch-theme-logo" onClick={toggle}></div>
         </HeaderDiv>
     );
 };

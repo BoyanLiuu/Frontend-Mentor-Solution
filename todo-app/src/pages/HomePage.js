@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '../components/header/Header';
 import TodoList from '../components/todoList/TodoList';
-// import BottomSection from '../elements/BottomSection';
 
 import { GlobalStyle, lightTheme, darkTheme } from '../Theme';
 import { ThemeProvider } from 'styled-components';
@@ -14,13 +13,9 @@ import bgLightDesktop from '../assets/img/bg-desktop-light.jpg';
 import bgDarkDesktop from '../assets/img/bg-desktop-dark.jpg';
 
 const StyledMainPageContainer = styled.div`
-    position: absolute;
     width: 32.7rem;
-    height: 100%;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 4.8rem 0 7.2rem 0;
+    margin: -15.2rem auto 0 auto;
+    padding-bottom: 3rem;
 `;
 
 const TopImage = styled.div`
@@ -37,14 +32,22 @@ function HomePage() {
         theme === 'light' ? setTheme('dark') : setTheme('light');
     };
 
-    // const logo = require(`../misc/img/icon-${svgName}.svg`).default;
+    // only add transition style when page is loade
+    useEffect(() => {
+        document.body.style.transition = 'all 700ms';
+        return () => (document.body.style.transition = 'none');
+    }, []);
 
     return (
         <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
             <GlobalStyle />
             <TopImage />
+
             <StyledMainPageContainer>
-                <Header name={theme === 'light' ? 'icon-moon' : 'icon-sun'} />
+                <Header
+                    toggle={themeToggler}
+                    name={theme === 'light' ? 'icon-moon' : 'icon-sun'}
+                />
                 <TodoList />
             </StyledMainPageContainer>
         </ThemeProvider>

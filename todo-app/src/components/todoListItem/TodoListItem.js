@@ -8,9 +8,11 @@ export const StyledTodoListItem = styled.li`
 
     width: 100%;
     min-height: 5.3rem;
-    border: 1px solid ${(props) => props.theme.circleBorderColor};
+    border-bottom: 1px solid ${(props) => props.theme.circleBorderColor};
     background-color: ${(props) => props.theme.todoBgColor};
     list-style: none;
+    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+    transition: all 700ms;
     cursor: pointer;
     :hover .remove-btn {
         opacity: 1;
@@ -19,6 +21,7 @@ export const StyledTodoListItem = styled.li`
 
     :hover .complete-btn {
         border-color: ${(props) => props.theme.checkBtnColor};
+        transition: all 700ms;
     }
     .segment-label {
         display: flex;
@@ -29,6 +32,7 @@ export const StyledTodoListItem = styled.li`
         font-size: 1.2rem;
         line-height: 1.2rem;
         color: ${(props) => props.theme.toDoActiveColor};
+        transition: all 700ms;
         align-self: center;
     }
     .remove-btn,
@@ -43,12 +47,14 @@ export const StyledTodoListItem = styled.li`
         width: 2rem;
         height: 2rem;
         border: 1px solid ${(props) => props.theme.circleBorderColor};
+        transition: all 700ms;
         border-radius: 50%;
     }
     .complete-btn:checked {
         background: url(${checkIcon}), ${(props) => props.theme.checkBtnColor};
         background-repeat: no-repeat;
         background-position: 50%;
+        transition: none !important;
     }
 
     .complete-btn:checked + .text-description {
@@ -66,6 +72,14 @@ export const StyledTodoListItem = styled.li`
 `;
 
 const TodoListItem = ({ textDescription }) => {
+    //event listener
+    const handleCompletedChanged = () => {
+        console.log('change status');
+    };
+
+    const onDelete = () => {
+        console.log('just delete');
+    };
     return (
         <StyledTodoListItem>
             <div className="segment-label">
@@ -73,11 +87,12 @@ const TodoListItem = ({ textDescription }) => {
                     className="complete-btn"
                     type="checkbox"
                     aria-label="checkbox"
+                    onChange={handleCompletedChanged}
                 />
                 <span className="text-description">{textDescription}</span>
             </div>
 
-            <div className="remove-btn"> </div>
+            <div className="remove-btn" onClick={onDelete}></div>
         </StyledTodoListItem>
     );
 };

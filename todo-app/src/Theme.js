@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-// hsl(0, 0%, 98%)
 export const lightTheme = {
     checkBtnColor: 'linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%))',
     typeHighlightColor: 'hsl(220, 98%, 61%)',
@@ -33,6 +32,7 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
 
         font-size: 62.5%;
+        
     }
     *,
     ::before,
@@ -46,7 +46,6 @@ export const GlobalStyle = createGlobalStyle`
         height: 100vh;
         background-color: ${(props) => props.theme.bgColor};
         font-family: 'Josefin Sans', sans-serif;
-        transition: all 750ms ;
     }
 
 `;

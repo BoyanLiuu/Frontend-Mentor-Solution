@@ -16,6 +16,9 @@ const StyledMainPageContainer = styled.div`
     width: 32.7rem;
     margin: -15.2rem auto 0 auto;
     padding-bottom: 3rem;
+    @media screen and (min-width: 1400px) {
+        width: 45rem;
+    }
 `;
 
 const TopImage = styled.div`
@@ -24,6 +27,13 @@ const TopImage = styled.div`
         props.theme.flag ? `url(${bgLightMobile})` : `url(${bgDarkMobile})`};
     background-repeat: no-repeat;
     background-size: cover;
+
+    @media screen and (min-width: 1400px) {
+        background-image: ${(props) =>
+            props.theme.flag
+                ? `url(${bgLightDesktop})`
+                : `url(${bgDarkDesktop})`};
+    }
 `;
 
 function HomePage() {

@@ -1,9 +1,21 @@
 import styled from 'styled-components';
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import TodoListItem from '../todoListItem/TodoListItem';
 import Footer from '../footer/Footer';
+import { selectFilteredTodoIds } from './todosSlice';
+
+import {
+    completedTodosCleared,
+    selectTodos,
+    todoAdded,
+} from '../todoList/todosSlice';
 const TodoListContainer = styled.div`
     position: relative;
+
+    ${Footer} {
+        display: none;
+    }
     ::before {
         content: '';
         position: absolute;
@@ -57,7 +69,10 @@ const TodoListContainer = styled.div`
         align-items: center;
         justify-content: space-between;
         padding: 0 2rem;
-        box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+        box-shadow: ${(props) =>
+            props.theme.flag
+                ? `0px 35px 50px -15px rgba(194, 195, 214, 0.5)`
+                : `0px 35px 50px -15px rgba(0,0,0,0.5);`};
         background-color: ${(props) => props.theme.todoBgColor};
         list-style: none;
         font-size: 1.2rem;
@@ -85,13 +100,15 @@ const TodoListContainer = styled.div`
 `;
 
 const TodoList = () => {
-    let a = `Complete online JavaScript courseComplete online JavaScript courseComplete online JavaScript courseComplete online JavaScript courseComplete online JavaScript courseComplete online JavaScript `;
+    // let a = `Complete online JavaScript courseComplete online JavaScript courseComplete online JavaScript courseComplete online JavaScript courseComplete online JavaScript courseComplete online JavaScript `;
     //hooks
+    const dispatch = useDispatch();
     const [text, setText] = useState('');
+    //get all to do id
+    const todoIds = useSelector(selectFilteredTodoIds);
+
     //event listener
-    const handleClearComplete = () => {
-        console.log('clear all completed ');
-    };
+    const handleClearComplete = () => dispatch(completedTodosCleared());
 
     const handleChange = (e) => setText(e.target.value);
 
@@ -102,8 +119,21 @@ const TodoList = () => {
             console.log(trimmedText);
             // And clear out the text input
             setText('');
+            dispatch(todoAdded(trimmedText));
         }
     };
+
+    const renderedListItems = todoIds.map((todoId) => {
+        return <TodoListItem key={todoId} id={todoId} />;
+    });
+
+    const todosRemaining = useSelector((state) => {
+        const uncompletedTodos = selectTodos(state).filter(
+            (todo) => !todo.completed
+        );
+        return uncompletedTodos.length;
+    });
+    const suffix = todosRemaining === 1 ? '' : 's';
 
     return (
         <TodoListContainer>
@@ -117,14 +147,13 @@ const TodoList = () => {
                 onKeyDown={handleKeyDown}
             />
             <ul>
-                <TodoListItem textDescription="Complete online JavaScript course" />
-                <TodoListItem textDescription="Complete online JavaScript course" />
-                <TodoListItem textDescription="Complete online JavaScript course" />
-                <TodoListItem textDescription="Complete online JavaScript course" />
-                <TodoListItem textDescription="Complete online JavaScript course" />
-                <TodoListItem textDescription="Complete online JavaScript course" />
+                {renderedListItems}
                 <li className="footer-section">
-                    <span className="itemInfor">5 items left</span>
+                    <span className="itemInfor">
+                        {todosRemaining} item{suffix} left
+                    </span>
+
+                    <Footer />
                     <button
                         aria-label="Clear Completed"
                         className="clear-all-btn"

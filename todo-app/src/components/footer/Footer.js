@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { StatusFilters, statusFilterChanged } from './footerSlice';
 
+// styledComponent
 const Btn = styled.button`
     font-size: 1.4rem;
     font-family: 'Josefin Sans', sans-serif;
@@ -24,45 +27,44 @@ const FooterContainer = styled.div`
     height: 4.8rem;
     background-color: ${(props) => props.theme.todoBgColor};
     transition: all 700ms;
-    box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+    box-shadow: ${(props) =>
+        props.theme.flag
+            ? `0px 35px 50px -15px rgba(194, 195, 214, 0.5)`
+            : `0px 35px 50px -15px rgba(0,0,0,0.5);`};
     button:last-of-type {
         margin-right: 0;
     }
 `;
 
+// function component
 const Footer = () => {
     const [curFilter, setFilter] = useState('All');
+    const dispatch = useDispatch();
+
     const handleFilterChange = (e) => {
+        //track active btn
         setFilter(e.target.value);
+
+        dispatch(statusFilterChanged(e.target.value));
     };
-    return (
-        <FooterContainer test="blue">
+    //loop through status filters and create button group
+    const filterBtns = Object.keys(StatusFilters).map((key) => {
+        const value = StatusFilters[key];
+        const active = curFilter === value ? 'true' : '';
+        return (
             <Btn
-                aria-label="All"
-                value="All"
+                key={value}
+                aria-label={value}
+                value={value}
                 className="filter-option "
                 onClick={handleFilterChange}
-                active={curFilter === 'All' ? 'true' : ''}>
-                All
+                active={active}>
+                {value}
             </Btn>
-            <Btn
-                aria-label="Active"
-                value="Active"
-                className="filter-option "
-                onClick={handleFilterChange}
-                active={curFilter === 'Active' ? 'true' : ''}>
-                Active
-            </Btn>
-            <Btn
-                aria-label="Completed"
-                value="Completed"
-                className="filter-option "
-                onClick={handleFilterChange}
-                active={curFilter === 'Completed' ? 'true' : ''}>
-                Completed
-            </Btn>
-        </FooterContainer>
-    );
+        );
+    });
+
+    return <FooterContainer test="blue">{filterBtns}</FooterContainer>;
 };
 
 export default Footer;

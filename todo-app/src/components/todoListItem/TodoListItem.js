@@ -1,6 +1,13 @@
 import styled from 'styled-components';
 import crossIcon from '../../assets/img/icon-cross.svg';
 import checkIcon from '../../assets/img/icon-check.svg';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+    todoDeleted,
+    todoToggled,
+    selectTodoById,
+} from '../todoList/todosSlice';
+
 export const StyledTodoListItem = styled.li`
     display: flex;
     align-items: center;
@@ -56,12 +63,10 @@ export const StyledTodoListItem = styled.li`
         background-position: 50%;
         transition: none !important;
     }
-
     .complete-btn:checked + .text-description {
         text-decoration: line-through;
         color: ${(props) => props.theme.toDoinActiveColor};
     }
-
     .remove-btn {
         width: 1.2rem;
         height: 1.2rem;
@@ -71,14 +76,17 @@ export const StyledTodoListItem = styled.li`
     }
 `;
 
-const TodoListItem = ({ textDescription }) => {
+const TodoListItem = ({ id }) => {
+    const dispatch = useDispatch();
+    const todo = useSelector((state) => selectTodoById(state, id));
+    const { text, completed } = todo;
+
     //event listener
     const handleCompletedChanged = () => {
-        console.log('change status');
+        dispatch(todoToggled(todo.id));
     };
-
     const onDelete = () => {
-        console.log('just delete');
+        dispatch(todoDeleted(todo.id));
     };
     return (
         <StyledTodoListItem>
@@ -86,10 +94,11 @@ const TodoListItem = ({ textDescription }) => {
                 <input
                     className="complete-btn"
                     type="checkbox"
+                    checked={completed}
                     aria-label="checkbox"
                     onChange={handleCompletedChanged}
                 />
-                <span className="text-description">{textDescription}</span>
+                <span className="text-description">{text}</span>
             </div>
 
             <div className="remove-btn" onClick={onDelete}></div>

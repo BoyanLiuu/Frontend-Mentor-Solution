@@ -27,6 +27,7 @@ const FooterContainer = styled.div`
     height: 4.8rem;
     background-color: ${(props) => props.theme.todoBgColor};
     transition: all 700ms;
+
     box-shadow: ${(props) =>
         props.theme.flag
             ? `0px 35px 50px -15px rgba(194, 195, 214, 0.5)`
@@ -64,7 +65,11 @@ const Footer = () => {
         );
     });
 
-    return <FooterContainer test="blue">{filterBtns}</FooterContainer>;
+    return (
+        <FooterContainer className="footer-container">
+            {filterBtns}
+        </FooterContainer>
+    );
 };
 
 export default Footer;

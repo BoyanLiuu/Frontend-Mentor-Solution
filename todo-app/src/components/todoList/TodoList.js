@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import TodoListItem from '../todoListItem/TodoListItem';
+import DragNDrop from '../todoListItem/DragNDrops';
 import Footer from '../footer/Footer';
-import { selectFilteredTodoIds } from './todosSlice';
 
 import {
     completedTodosCleared,
@@ -13,7 +12,7 @@ import {
 const TodoListContainer = styled.div`
     position: relative;
 
-    ${Footer} {
+    span + div {
         display: none;
     }
     ::before {
@@ -97,6 +96,18 @@ const TodoListContainer = styled.div`
             transition: all 700ms;
         }
     }
+
+    @media screen and (min-width: 1400px) {
+        .footer-container {
+            width: 18.9rem;
+        }
+        span + div {
+            display: flex;
+        }
+        div:last-child {
+            display: none;
+        }
+    }
 `;
 
 const TodoList = () => {
@@ -104,8 +115,6 @@ const TodoList = () => {
     //hooks
     const dispatch = useDispatch();
     const [text, setText] = useState('');
-    //get all to do id
-    const todoIds = useSelector(selectFilteredTodoIds);
 
     //event listener
     const handleClearComplete = () => dispatch(completedTodosCleared());
@@ -122,10 +131,6 @@ const TodoList = () => {
             dispatch(todoAdded(trimmedText));
         }
     };
-
-    const renderedListItems = todoIds.map((todoId) => {
-        return <TodoListItem key={todoId} id={todoId} />;
-    });
 
     const todosRemaining = useSelector((state) => {
         const uncompletedTodos = selectTodos(state).filter(
@@ -147,7 +152,7 @@ const TodoList = () => {
                 onKeyDown={handleKeyDown}
             />
             <ul>
-                {renderedListItems}
+                <DragNDrop />
                 <li className="footer-section">
                     <span className="itemInfor">
                         {todosRemaining} item{suffix} left

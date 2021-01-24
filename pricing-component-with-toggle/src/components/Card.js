@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const CardContainer = styled.div`
     width: 32.7rem;
+    height: 45.3rem;
     margin: 0 auto 3.2rem auto;
     padding: 3.1rem 2.9rem;
     display: flex;
@@ -65,9 +66,13 @@ const CardContainer = styled.div`
         border: none;
         outline: none;
     }
+
+    @media screen and (min-width: 1440px) {
+        margin: 0;
+    }
 `;
 
-const Card = ({ cardInfo }) => {
+const Card = ({ cardInfo, className }) => {
     const { type, price, bgColor, list } = cardInfo;
 
     const listItem = list.map((item, idx) => {
@@ -79,7 +84,7 @@ const Card = ({ cardInfo }) => {
     });
 
     return (
-        <CardContainer bgColor={bgColor}>
+        <CardContainer bgColor={bgColor} className={className}>
             <h3 className="type">{type}</h3>
             <h3 className="price">
                 <span className="dollar-sign">$</span>

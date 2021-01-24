@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 const HeaderDiv = styled.div`
     width: 23.9rem;
-
-    margin: 6.4rem auto 8rem auto;
+    margin: 6.4rem 5rem 8rem 0;
     text-align: center;
     .title {
         font-size: ${(prop) => prop.theme.mediumFont};
@@ -43,6 +42,9 @@ const HeaderDiv = styled.div`
         left: 0.4rem;
     }
 
+    .change-plan-checkbox:checked {
+        background: ${(prop) => prop.theme.gradientColor2};
+    }
     .toggle-tilte {
         font-size: ${(prop) => prop.theme.xsmallFont};
         color: ${(prop) => prop.theme.toggleTextColor};

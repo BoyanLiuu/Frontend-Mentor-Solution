@@ -4,7 +4,10 @@ export const Theme = {
     smallFont: '1.8rem',
     mediumFont: '3.2rem',
     largeFont: '7.2rem',
-    gradientColor: 'linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%))',
+    gradientColor:
+        'linear-gradient(135deg,hsl(236, 72%, 79%), hsl(237, 63%, 64%))',
+    gradientColor2:
+        'linear-gradient(135deg,hsla(236, 72%, 79%,0.5), hsla(237, 63%, 64%,0.5))',
     bgColor: ' hsl(240, 78%, 98%)',
     btnTextColor: '#6d72de',
     mainTextColor: 'hsl(233, 13%, 49%)',
@@ -30,6 +33,7 @@ export const GlobalStyle = createGlobalStyle`
     body {
         background-color:  ${(props) => props.theme.bgColor};
         font-family: 'Montserrat', sans-serif;
+        
     }
 
 `;

@@ -5,7 +5,30 @@ import { ThemeProvider } from 'styled-components';
 import styled from 'styled-components';
 import Header from '../components/Heading';
 import Card from '../components/Card';
-const StyledMainPageContainer = styled.div``;
+import bgTop from '../assets/img/bg-top.svg';
+import bgBottom from '../assets/img/bg-bottom.svg';
+const StyledMainPageContainer = styled.div`
+    background-image: url(${bgTop}), url(${bgBottom});
+    background-repeat: no-repeat;
+    background-position: top right, bottom left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+
+    @media screen and (min-width: 1440px) {
+        width: 100%;
+        .card-container {
+            height: 50.1rem;
+            width: 105rem;
+            display: flex;
+            align-items: center;
+        }
+        .card-1 {
+            height: 100%;
+        }
+    }
+`;
 
 function HomePage() {
     const data = [
@@ -45,14 +68,16 @@ function HomePage() {
 
     // create list of card
     const renderedListItems = list.map((card, index) => {
-        return <Card key={index} cardInfo={card} />;
+        return <Card key={index} cardInfo={card} className={`card-${index}`} />;
     });
 
     return (
         <ThemeProvider theme={Theme}>
             <GlobalStyle />
-            <Header handleToggle={handleToggle} />
-            {renderedListItems}
+            <StyledMainPageContainer>
+                <Header handleToggle={handleToggle} />
+                <div className="card-container">{renderedListItems}</div>
+            </StyledMainPageContainer>
         </ThemeProvider>
     );
 }

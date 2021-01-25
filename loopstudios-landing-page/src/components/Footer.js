@@ -6,14 +6,23 @@ import facebookIcon from '../assets/img/icon-facebook.svg';
 import instagramIcon from '../assets/img/icon-instagram.svg';
 import pinterestIcon from '../assets/img/icon-pinterest.svg';
 import twitterIcon from '../assets/img/icon-twitter.svg';
+
 const FooterContainer = styled.footer`
     width: 100%;
     height: 47rem;
     background-color: black;
-    padding: 5.6rem 5.2rem;
+    padding-top: 5.6rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    .inner-div {
+        width: 27.3rem;
+    }
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     font-size: ${(prop) => prop.theme.xsmallFont};
     .logo-footer {
         width: 14.4rem;
@@ -39,7 +48,7 @@ const FooterContainer = styled.footer`
     .link:hover {
         border-bottom: 1px solid white;
     }
-    aside {
+    .social-icon-container {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -55,6 +64,49 @@ const FooterContainer = styled.footer`
         color: white;
         line-height: 2.5rem;
         margin-top: 1.6rem;
+    }
+
+    @media screen and (min-width: 950px) {
+        padding: 4.4rem 0;
+
+        .links {
+            width: 100%;
+            flex-direction: row;
+            height: 3.5rem;
+            justify-content: space-between;
+            margin-bottom: 0;
+        }
+        .inner-div {
+            width: 80rem;
+            height: 8.3rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .logo-footer {
+            margin-bottom: 0;
+        }
+        nav {
+            width: 38rem;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        .social-icon-container {
+            align-items: flex-end;
+
+            justify-content: space-between;
+        }
+        .copy {
+            height: 3.5rem;
+            margin-top: 0;
+        }
+    }
+
+    @media screen and (min-width: 1000px) {
+        width: 100rem;
+    }
+
+    @media screen and (min-width: 1400px) {
+        width: 111.4rem;
     }
 `;
 
@@ -96,41 +148,43 @@ const Footer = () => {
 
     return (
         <FooterContainer>
-            <nav>
-                <img src={logo} alt="logo" className="logo-footer" />
+            <div className="inner-div">
+                <nav>
+                    <img src={logo} alt="logo" className="logo-footer" />
 
-                <ul className="links">
-                    <li>
-                        <a href="#" className="link">
-                            About
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" className="link">
-                            Careers
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" className="link">
-                            Events
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" className="link">
-                            Products
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" className="link">
-                            Support
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <aside>
-                <div class="social">{renderIconLst}</div>
-                <p class="copy">© 2021 Loopstudios. All rights reserved.</p>
-            </aside>
+                    <ul className="links">
+                        <li>
+                            <a href="#" className="link">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" className="link">
+                                Careers
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" className="link">
+                                Events
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" className="link">
+                                Products
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" className="link">
+                                Support
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div className="social-icon-container">
+                    <div class="social">{renderIconLst}</div>
+                    <p class="copy">© 2021 Loopstudios. All rights reserved.</p>
+                </div>
+            </div>
         </FooterContainer>
     );
 };

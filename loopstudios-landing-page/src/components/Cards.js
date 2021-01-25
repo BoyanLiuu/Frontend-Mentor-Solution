@@ -23,6 +23,10 @@ const CardsDiv = styled.div`
         cursor: pointer;
         outline: none;
     }
+    .see-all-btn:hover {
+        background: black;
+        color: white;
+    }
     button:nth-child(3) {
         display: block;
         margin: 3.4rem auto 9.6rem;

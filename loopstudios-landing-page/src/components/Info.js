@@ -31,6 +31,45 @@ const InfoDiv = styled.div`
         opacity: 0.5;
         color: black;
     }
+    @media screen and (min-width: 950px) {
+        width: 80rem;
+        margin: 0 auto;
+        padding: 0;
+        margin-bottom: 18.7rem;
+
+        position: relative;
+
+        .info-title {
+            position: absolute;
+            bottom: 4.8rem;
+            right: 0;
+            width: 54.1rem;
+            height: 31.7rem;
+            padding: 9.7rem 0 0 9.7rem;
+            background-color: white;
+            text-align: start;
+        }
+        .info-title h2 {
+            font-size: ${(prop) => prop.theme.xlargeFont};
+            line-height: 4.8rem;
+        }
+        .info-title p {
+            margin-top: 2.5rem;
+        }
+
+        .info-img {
+            width: 73.1rem;
+            height: 50rem;
+        }
+    }
+
+    @media screen and (min-width: 1000px) {
+        width: 100rem;
+    }
+
+    @media screen and (min-width: 1400px) {
+        width: 111.4rem;
+    }
 `;
 
 const InfoSection = () => {

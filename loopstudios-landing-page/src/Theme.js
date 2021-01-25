@@ -27,4 +27,21 @@ export const GlobalStyle = createGlobalStyle`
         
     }
 
+    .link::after {
+        content: '';
+        pointer-events: none;
+        position: absolute;
+        bottom: -0.6rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2.4rem;
+        height: 0.2rem;
+        background: #fff;
+        opacity: 0;
+    }
+
+    .link:hover::after {
+        opacity: 1;
+    }
+
 `;

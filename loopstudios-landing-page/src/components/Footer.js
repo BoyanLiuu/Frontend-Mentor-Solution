@@ -43,11 +43,9 @@ const FooterContainer = styled.footer`
         color: white;
         text-decoration: none;
         line-height: 2.5rem;
+        position: relative;
     }
 
-    .link:hover {
-        border-bottom: 1px solid white;
-    }
     .social-icon-container {
         display: flex;
         flex-direction: column;
@@ -102,11 +100,16 @@ const FooterContainer = styled.footer`
     }
 
     @media screen and (min-width: 1000px) {
-        width: 100rem;
+        height: 16rem;
+        .inner-div {
+            width: 100rem;
+        }
     }
 
     @media screen and (min-width: 1400px) {
-        width: 111.4rem;
+        .inner-div {
+            width: 111.4rem;
+        }
     }
 `;
 
@@ -136,7 +139,7 @@ const Footer = () => {
 
     const renderIconLst = iconLst.map((item, idx) => {
         return (
-            <a href={item.link} aria-label={`${item.name}-link`}>
+            <a key={idx} href={item.link} aria-label={`${item.name}-link`}>
                 <img
                     className="social-logo"
                     src={item.icon}
@@ -181,8 +184,10 @@ const Footer = () => {
                     </ul>
                 </nav>
                 <div className="social-icon-container">
-                    <div class="social">{renderIconLst}</div>
-                    <p class="copy">© 2021 Loopstudios. All rights reserved.</p>
+                    <div className="social">{renderIconLst}</div>
+                    <p className="copy">
+                        © 2021 Loopstudios. All rights reserved.
+                    </p>
                 </div>
             </div>
         </FooterContainer>

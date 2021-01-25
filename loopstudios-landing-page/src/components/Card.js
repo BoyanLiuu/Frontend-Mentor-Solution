@@ -9,6 +9,25 @@ const CardContainer = styled.div`
         height: 12rem;
         position: relative;
         cursor: pointer;
+        color: white;
+    }
+    .card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(255, 255, 255, 0);
+        z-index: 0;
+        transition: 0.5s ease;
+    }
+
+    .card:hover::after {
+        background: rgba(255, 255, 255, 0.75);
+    }
+    .card:hover {
+        color: black;
     }
 
     .card h3 {
@@ -20,7 +39,7 @@ const CardContainer = styled.div`
         height: 4.8rem;
         text-align: start;
         font-size: ${(prop) => prop.theme.smallFont};
-        color: white;
+
         font-weight: 300;
         line-height: 2.4rem;
         text-transform: uppercase;
@@ -40,6 +59,8 @@ const CardContainer = styled.div`
         }
 
         .card h3 {
+            font-size: 3.2rem;
+            line-height: 3rem;
             position: absolute;
             left: 4rem;
             top: 35.4rem;

@@ -107,7 +107,7 @@ const CardSection = () => {
             img: 'soccer-team',
             text: 'Soccer Team Vr',
             mobileWidth: '10.8rem',
-            desktopWidth: '14.3rem',
+            desktopWidth: '14.4rem',
         },
         {
             img: 'grid',

@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-
+// 333136 -->--dark-grey-color
 export const GlobalStyle = createGlobalStyle`
     :root {
         box-sizing: border-box;
@@ -11,7 +11,8 @@ export const GlobalStyle = createGlobalStyle`
         --white-color:hsl(0,0%,100%);
         --light-peach-color:hsl(11,100%,80%);
         --dark-grey-color:hsl(264,5%,20%);
-        --light-grey-color:hsl(210,17%,95%);   
+        --light-grey-color:hsl(210,17%,95%); 
+        --extra-light-peach-color:  hsl(14,76%,97%)
     }
     *,
     ::before,
@@ -56,6 +57,12 @@ export const GlobalStyle = createGlobalStyle`
     .link-btn:hover{
         color: var(--white-color);
         background-color: var(--light-peach-color);
+    }
+    .flex-col-vh-center{
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
     }
 
 `;

@@ -17,18 +17,12 @@ const StyledMainPageContainer = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-        overflow: hidden;
+
         position: relative;
         margin-bottom: 12rem;
-    }
-    .hero-container::before {
-        position: absolute;
-        content: '';
-        top: 10.2rem;
-        width: 64rem;
-        left: 0.5rem;
-        height: 64rem;
         background-image: url(${bgHeroImg});
+        background-position: left center;
+        background-repeat: no-repeat;
     }
     .hero-text {
         width: 32.7rem;
@@ -67,6 +61,24 @@ const StyledMainPageContainer = styled.div`
         justify-content: space-between;
         align-items: center;
         margin-bottom: 11.9rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 100%;
+        .hero-container {
+            width: 100%;
+            height: 84.3rem;
+            padding: 0 5.45rem;
+            border-radius: 1.5rem;
+
+            background-position: 17rem center;
+        }
+        /* .hero-text{
+            width:57.3rem;
+            height:
+        } */
+        .award-main-text {
+        }
     }
 `;
 function Home() {

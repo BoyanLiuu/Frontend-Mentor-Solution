@@ -6,7 +6,8 @@ import instagramLogo from '../assets/images/shared/icon-instagram.svg';
 import pinterestLogo from '../assets/images/shared/icon-pinterest.svg';
 import twitterLogo from '../assets/images/shared/icon-twitter.svg';
 import youtubeLogo from '../assets/images/shared/icon-youtube.svg';
-
+// import bgPattern from '../assets/images/shared/tablet/bg-pattern-design-pages-intro-tablet.svg';
+import bgPattern from '../assets/images/shared/desktop/bg-pattern-call-to-action.svg';
 const FooterContainer = styled.footer`
     width: 100%;
     height: 81.5rem;
@@ -73,8 +74,50 @@ const FooterContainer = styled.footer`
         display: flex;
         justify-content: space-between;
     }
+
+    @media screen and (min-width: 768px) {
+        height: 42.3rem;
+        .inner-div {
+            max-width: 111.1rem;
+            margin-top: 16.7rem;
+            height: 17.7rem;
+        }
+        .logo {
+            margin: 0;
+        }
+        .footer-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            width: 100%;
+            height: 6.7rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .links {
+            width: 37rem;
+            height: auto;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 0;
+            border: none;
+        }
+        .footer-detail {
+            width: 100%;
+            margin-top: 3.1rem;
+            height: 7.8rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .social-icon-container {
+            width: 18.4rem;
+            height: 2.4rem;
+            align-self: flex-end;
+        }
+    }
 `;
-const TallAboutContainer = styled.div`
+const TalkAboutContainer = styled.div`
     position: absolute;
     width: 32.7rem;
     height: 37.9rem;
@@ -85,14 +128,18 @@ const TallAboutContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    background-image: url(${bgPattern});
+    background-position: center right;
+    background-repeat: no-repeat;
 
     .talk-about-text {
         color: white;
         text-align: center;
+        z-index: 2;
+        margin-bottom: 3.2rem;
     }
     .talk-about-text h1 {
-        height: 82px;
+        height: 8.2rem;
         font-size: 3.2rem;
         font-weight: 500;
         line-height: 3.6rem;
@@ -106,10 +153,52 @@ const TallAboutContainer = styled.div`
     .touch-btn {
         background-color: white;
         color: var(--dark-grey-color);
+        z-index: 2;
     }
 
-    .circle {
-        position: absolute;
+    @media screen and (min-width: 768px) {
+        top: -27.5rem;
+        width: 69rem;
+        height: 35rem;
+        padding: 5.7rem 5.85rem;
+        .talk-about-text {
+            height: 14.8rem;
+        }
+        .talk-about-text h1 {
+            width: 33.5rem;
+            height: 9.8rem;
+            font-size: 4rem;
+            line-height: 4rem;
+            margin: 0 auto;
+        }
+        .talk-about-text p {
+            font-size: 1.6rem;
+            line-height: 2.6rem;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        top: -22rem;
+        width: 111.1rem;
+        height: 29.2rem;
+        padding-left: 9.5rem;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .talk-about-text {
+            width: 45.9rem;
+            justify-self: flex-start;
+            text-align: left;
+            margin: 0;
+        }
+        .talk-about-text h1 {
+            width: 26.8rem;
+            margin: 0;
+        }
+        .talk-about-text p {
+            font-size: 1.6rem;
+            line-height: 2.6rem;
+        }
     }
 `;
 const Footer = () => {
@@ -148,7 +237,7 @@ const Footer = () => {
     });
     return (
         <FooterContainer>
-            <TallAboutContainer>
+            <TalkAboutContainer>
                 <div className="talk-about-text">
                     <h1>Let’s talk about your project</h1>
                     <p>
@@ -159,12 +248,7 @@ const Footer = () => {
                 <a href="#" className="touch-btn link-btn">
                     GET IN TOUCH
                 </a>
-                <span className="circle talk-about-circle-one"></span>
-                <span className="circle talk-about-circle-two"></span>
-                <span className="circle talk-about-circle-three"></span>
-                <span className="circle talk-about-circle-four"></span>
-                <span className="circle talk-about-circle-five"></span>
-            </TallAboutContainer>
+            </TalkAboutContainer>
 
             <div className="inner-div">
                 <div className="footer-nav">

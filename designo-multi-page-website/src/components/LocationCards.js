@@ -5,14 +5,15 @@ import australiaIllustration from '../assets/images/shared/desktop/illustration-
 import ukIllustration from '../assets/images/shared/desktop/illustration-united-kingdom.svg';
 const StyledLocationsCardsContainer = styled.div`
     width: 100%;
-    height: 111.8rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     margin-top: 11.9rem;
     margin: 11.9rem 0 12rem 0;
-
+    .card-container .location-section:nth-child(1),
+    .card-container .location-section:nth-child(2) {
+        margin-bottom: 4.8rem;
+    }
     .location-img {
         width: 202px;
         height: 202px;
@@ -95,7 +96,7 @@ const LocationsCards = () => {
                     <div className="canada location-img" />
                     <div className="bot-container">
                         <h3>CANADA</h3>
-                        <a href="#" class="button link-btn">
+                        <a href="#" className="button link-btn">
                             SEE LOCATION
                         </a>
                     </div>
@@ -105,7 +106,7 @@ const LocationsCards = () => {
                     <div className="australia location-img" />
                     <div className="bot-container">
                         <h3>AUSTRALIA</h3>
-                        <a href="#" class="button link-btn">
+                        <a href="#" className="button link-btn">
                             SEE LOCATION
                         </a>
                     </div>

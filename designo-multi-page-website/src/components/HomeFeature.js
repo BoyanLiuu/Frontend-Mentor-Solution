@@ -13,6 +13,19 @@ const HomeFeatureDiv = styled.div`
     justify-content: space-between;
     padding: 0 2.4rem;
     margin-bottom: 31.1rem;
+
+    @media screen and (min-width: 768px) {
+        max-width: 111rem;
+        padding: 0 3.9rem;
+        height: 67rem;
+    }
+    @media screen and (min-width: 1440px) {
+        padding: 0;
+        height: 41.2rem;
+        flex-direction: row;
+        margin-left: auto;
+        margin-right: auto;
+    }
 `;
 
 const HomeFeatureSection = styled.div`
@@ -60,11 +73,39 @@ const HomeFeatureSection = styled.div`
 
         letter-spacing: 5px;
         margin-bottom: 3.2rem;
+        text-transform: uppercase;
     }
     p {
         font-size: 16px;
         font-weight: 400;
         line-height: 26px;
+    }
+    @media screen and (min-width: 768px) {
+        height: 20.2rem;
+        display: flex;
+        flex-direction: column;
+        /* align-content: space-between; */
+        flex-wrap: wrap;
+
+        .home-feature-img-container {
+            margin: 0 4.8rem 0 0;
+        }
+        h1,
+        p {
+            width: 43.9rem;
+            text-align: left;
+        }
+    }
+
+    @media screen and (min-width: 1444px) {
+        width: 35rem;
+        height: 41.2rem;
+
+        h1,
+        p {
+            width: 100%;
+            text-align: center;
+        }
     }
 `;
 

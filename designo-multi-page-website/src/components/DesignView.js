@@ -64,6 +64,8 @@ const DesignViewDiv = styled.div`
         right: 0px;
         bottom: 6px;
     }
+    @media screen and (min-width: 768px) {
+    }
 `;
 
 const DesignView = ({ title, svgName, width, height }) => {

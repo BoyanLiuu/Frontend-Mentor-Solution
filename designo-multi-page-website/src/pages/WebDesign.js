@@ -1,14 +1,25 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { GlobalStyle } from '../Theme';
 import styled from 'styled-components';
+import { useEffect } from 'react';
 
 import Header from '../components/Header';
 import DesignBanner from '../components/DesignBanner';
 import DesignCard from '../components/DesignCard';
 import DesignView from '../components/DesignView';
 import Footer from '../components/Footer';
+import bgPattern from '../assets/images/shared/desktop/bg-pattern-leaf.svg';
 
 const StyledWebDesignPageContainer = styled.div`
+    width: 100%;
+
+    main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    /* overflow: hidden; */
     .desing-view-container {
         height: 52.4rem;
         display: flex;
@@ -16,6 +27,7 @@ const StyledWebDesignPageContainer = styled.div`
         justify-content: space-between;
         align-items: center;
         margin-bottom: 31.1rem;
+        transition: 0.2s ease-in-out;
     }
     .design-cards {
         height: 306.8rem;
@@ -24,9 +36,47 @@ const StyledWebDesignPageContainer = styled.div`
         justify-content: space-between;
         align-items: center;
         margin-bottom: 9.6rem;
+        transition: 0.2s ease-in-out;
+    }
+
+    @media screen and (min-width: 768px) {
+        .desing-view-container {
+            width: 68.9rem;
+            height: 42.4rem;
+            margin-bottom: 38.4rem;
+        }
+
+        .design-cards {
+            width: 68.9rem;
+            height: 203rem;
+        }
+    }
+
+    @media screen and (min-width: 1444px) {
+        main {
+            background-image: url(${bgPattern});
+            background-repeat: no-repeat;
+            background-position: 0 47.5rem;
+        }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .design-cards {
+            width: 111rem;
+            height: 98.8rem;
+            flex-wrap: wrap;
+        }
+        .desing-view-container {
+            width: 111.1rem;
+            height: 30.8rem;
+            flex-direction: row;
+        }
     }
 `;
 function WebDesign() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
     const designViewData = [
         {
             title: 'app design',
@@ -92,6 +142,7 @@ function WebDesign() {
                 svgName={item.svgName}
                 width={item.width}
                 height={item.height}
+                home="false"
             />
         );
     });
@@ -114,9 +165,8 @@ function WebDesign() {
                 <Header />
                 <DesignBanner
                     title="Web Design"
-                    content="We build websites that serve as powerful marketing tools and bring memorable brand experiences.
-
-                "
+                    content="We build websites that serve as powerful marketing tools and bring memorable brand experiences."
+                    bgName="web-design"
                 />
 
                 <div className="design-cards">{renderDesignCards}</div>

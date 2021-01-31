@@ -1,8 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 import canadaIllustration from '../assets/images/shared/desktop/illustration-canada.svg';
 import australiaIllustration from '../assets/images/shared/desktop/illustration-australia.svg';
 import ukIllustration from '../assets/images/shared/desktop/illustration-united-kingdom.svg';
+
 const StyledLocationsCardsContainer = styled.div`
     width: 100%;
     display: flex;
@@ -86,6 +89,14 @@ const StyledLocationsCardsContainer = styled.div`
     .card-container .location-section:nth-child(3)::before {
         transform: rotate(120deg);
     }
+
+    @media screen and (min-width: 1440px) {
+        .card-container {
+            flex-direction: row;
+            width: 111.1rem;
+            height: 36.4rem;
+        }
+    }
 `;
 
 const LocationsCards = () => {
@@ -96,9 +107,9 @@ const LocationsCards = () => {
                     <div className="canada location-img" />
                     <div className="bot-container">
                         <h3>CANADA</h3>
-                        <a href="#" className="button link-btn">
+                        <Link to="/locations" className="button link-btn">
                             SEE LOCATION
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
@@ -106,18 +117,18 @@ const LocationsCards = () => {
                     <div className="australia location-img" />
                     <div className="bot-container">
                         <h3>AUSTRALIA</h3>
-                        <a href="#" className="button link-btn">
+                        <Link to="/locations" className="button link-btn">
                             SEE LOCATION
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div className="location-section">
                     <div className="uk location-img" />
                     <div className="bot-container">
                         <h3>UNITED KINGDOM</h3>
-                        <a href="#" className="button link-btn">
+                        <Link to="/locations" className="button link-btn">
                             SEE LOCATION
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

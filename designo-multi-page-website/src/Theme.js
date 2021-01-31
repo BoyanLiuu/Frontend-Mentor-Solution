@@ -4,7 +4,6 @@ export const GlobalStyle = createGlobalStyle`
     :root {
         box-sizing: border-box;
         font-size: 62.5%;
-        --transition: 300ms ease-in-out;
         --body-text:1.6rem;
         --peach-color:hsl(11,73%,66%);
         --black-color:hsl(270,3%,11%);
@@ -24,6 +23,7 @@ export const GlobalStyle = createGlobalStyle`
     body {
         width:100%;
         font-family: 'Jost', sans-serif;
+        animation: fadeIn ease 1s;
     }
     .cursor-true{
         cursor: pointer;
@@ -67,6 +67,16 @@ export const GlobalStyle = createGlobalStyle`
     }
 
 
-
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    a{
+        text-decoration:none;
+    }
 
 `;

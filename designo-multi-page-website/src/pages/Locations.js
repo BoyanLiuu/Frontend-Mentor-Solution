@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { GlobalStyle } from '../Theme';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
+import { useEffect } from 'react';
+
 import styled from 'styled-components';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import test from '../assets/images/locations/desktop/image-map-australia.png';
+import bgCircle from '../assets/images/shared/desktop/bg-pattern-two-circles.svg';
 
 const StyledLocationsPageContainer = styled.div`
     width: 100%;
@@ -44,12 +46,87 @@ const StyledLocationsPageContainer = styled.div`
     .bold {
         font-weight: 700;
     }
+
+    @media screen and (min-width: 768px) {
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .locations {
+            width: 68.9rem;
+        }
+        .location {
+            height: auto;
+            margin-bottom: 12rem;
+        }
+        .location-map {
+            height: 32.6rem;
+            margin-bottom: 2.4rem;
+        }
+        .location-desc-container {
+            border-radius: 1.5rem;
+            height: 32.6rem;
+            background-image: url(${bgCircle});
+            background-repeat: no-repeat;
+            background-position: left bottom;
+        }
+        .location-desc-inner-container {
+            align-items: flex-start;
+            text-align: left;
+            width: 54rem;
+            height: 15rem;
+        }
+        .location-address,
+        .location-contact {
+            width: 28.5rem;
+        }
+        .location-desc-detail {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .location-desc-inner-container h2 {
+            font-size: 4rem;
+            line-height: 4.8rem;
+        }
+        .location-address,
+        .location-contact {
+            font-size: 1.6rem;
+            line-height: 2.6rem;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        .locations {
+            width: 111rem;
+        }
+        .location {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 3.2rem;
+        }
+        .location-map {
+            width: 35rem;
+            height: 32.6rem;
+        }
+        .location-desc-container {
+            width: 73rem;
+            height: 32.6rem;
+            order: -1;
+        }
+    }
 `;
 
 function Locations() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
     const locationData = [
         {
-            location: 'Camada',
+            location: 'Canada',
             officeName: 'Designo Central Office',
             streetName: '3886 Wellington Street',
             city: 'Toronto, Ontario M9C 3J5',

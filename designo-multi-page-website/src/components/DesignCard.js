@@ -51,13 +51,49 @@ const StyledDesignCardContainer = styled.div`
         font-weight: 400;
         line-height: 2.6rem;
     }
+    @media screen and (min-width: 768px) {
+        width: 69rem;
+        height: 31rem;
+        flex-direction: row;
+
+        .design-img {
+            width: 33.8rem;
+            height: 100%;
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 1.5rem;
+        }
+        .design-card-desc {
+            margin-top: 0;
+            margin-left: 3.1rem;
+        }
+    }
+
+    @media screen and (min-width: 1444px) {
+        width: 35rem;
+        height: 47.8rem;
+        flex-direction: column;
+        .design-img {
+            width: 100%;
+            height: 32rem;
+
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+            border-bottom-left-radius: 0;
+        }
+
+        .design-card-desc {
+            margin-top: 3.1rem;
+            margin-left: 0;
+        }
+    }
 `;
 
-const DesignBanner = ({ design, title, desc, fileName }) => {
+const DesignBanner = ({ design, title, desc, fileName, className }) => {
     const curImg = require(`../assets/images/${design}/desktop/image-${fileName}.jpg`)
         .default;
     return (
-        <StyledDesignCardContainer>
+        <StyledDesignCardContainer className={className}>
             <img src={curImg} alt="title" className="design-img" />
             <div className="design-card-desc">
                 <h3>{title}</h3>

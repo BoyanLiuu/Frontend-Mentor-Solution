@@ -1,14 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { GlobalStyle } from '../Theme';
 import styled from 'styled-components';
+import { useEffect } from 'react';
 
 import Header from '../components/Header';
 import DesignBanner from '../components/DesignBanner';
 import DesignCard from '../components/DesignCard';
 import DesignView from '../components/DesignView';
 import Footer from '../components/Footer';
-
+import bgPattern from '../assets/images/shared/desktop/bg-pattern-leaf.svg';
 const StyledGraphicDesignPageContainer = styled.div`
+    main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .desing-view-container {
         height: 52.4rem;
         display: flex;
@@ -25,8 +32,46 @@ const StyledGraphicDesignPageContainer = styled.div`
         align-items: center;
         margin-bottom: 9.6rem;
     }
+
+    @media screen and (min-width: 768px) {
+        .desing-view-container {
+            width: 68.9rem;
+            height: 42.4rem;
+            margin-bottom: 38.4rem;
+        }
+
+        .design-cards {
+            height: 100.4rem;
+        }
+    }
+
+    @media screen and (min-width: 1444px) {
+        main {
+            background-image: url(${bgPattern});
+            background-repeat: no-repeat;
+            background-position: 0 47.5rem;
+        }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .design-cards {
+            width: 111.1rem;
+            height: 47.8rem;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        .desing-view-container {
+            width: 111.1rem;
+            height: 30.8rem;
+            flex-direction: row;
+            margin-bottom: 31.1rem;
+        }
+    }
 `;
 function GraphicDesign() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
     const designViewData = [
         {
             title: 'web design',
@@ -69,6 +114,7 @@ function GraphicDesign() {
                 svgName={item.svgName}
                 width={item.width}
                 height={item.height}
+                home="false"
             />
         );
     });
@@ -92,6 +138,7 @@ function GraphicDesign() {
                 <DesignBanner
                     title="Graphic Design"
                     content="We deliver eye-catching branding materials that are tailored to meet your business objectives."
+                    bgName="graphic-design"
                 />
 
                 <div className="design-cards">{renderDesignCards}</div>

@@ -1,11 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { GlobalStyle } from '../Theme';
 import styled from 'styled-components';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import LocationsCards from '../components/LocationCards';
 import errorIcon from '../assets/images/contact/desktop/icon-error.svg';
+import bgCircle from '../assets/images/contact/desktop/bg-pattern-hero-desktop.svg';
+import bgPattern from '../assets/images/shared/desktop/bg-pattern-leaf.svg';
 const StyledContactPageContainer = styled.div`
     .contact-us-container {
         width: 100%;
@@ -16,7 +19,6 @@ const StyledContactPageContainer = styled.div`
         width: 32.7rem;
         display: flex;
         flex-direction: column;
-        align-items: center;
     }
     .hero-text {
         width: 100%;
@@ -31,7 +33,6 @@ const StyledContactPageContainer = styled.div`
     form {
         display: flex;
         flex-direction: column;
-        height: 38.7rem;
         width: 100%;
         border: none;
     }
@@ -114,8 +115,87 @@ const StyledContactPageContainer = styled.div`
     footer .inner-div {
         margin-top: 6.4rem;
     }
+
+    @media screen and (min-width: 768px) {
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-us-container {
+            width: 68.9rem;
+            height: 71.1rem;
+            border-radius: 1.5rem;
+            background-image: url(${bgCircle});
+            background-repeat: no-repeat;
+            background-position: -8rem -9rem;
+        }
+        .hero-container {
+            width: 57.3rem;
+        }
+        .hero-text {
+            width: 100%;
+            height: 15.8rem;
+            text-align: left;
+            margin-bottom: 4rem;
+        }
+        .hero-text h1 {
+            margin-bottom: 3.2rem;
+            font-size: 4rem;
+            line-height: 4.8rem;
+        }
+        .hero-text p {
+            font-size: 1.6rem;
+            line-height: 2.6rem;
+        }
+        .submit-btn {
+            align-self: flex-end;
+        }
+        footer {
+            height: 32.1rem;
+        }
+        footer .inner-div {
+            margin-top: 8rem;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        main {
+            background-image: url(${bgPattern});
+            background-repeat: no-repeat;
+            background-position: right 80rem;
+        }
+        .contact-us-container {
+            width: 111.1rem;
+            height: 48rem;
+        }
+        .hero-container {
+            width: 92rem;
+            flex-direction: row;
+            align-items: center;
+        }
+        .hero-text {
+            width: 54rem;
+            height: 18.4rem;
+            margin-bottom: 0;
+        }
+        .hero-text p {
+            width: 44.5rem;
+            height: 10.4rem;
+        }
+        form {
+            width: 38rem;
+        }
+        footer .inner-div {
+            margin-top: 7.2rem;
+        }
+    }
 `;
 function Contact() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
     const [inputField, setinputField] = useState({
         name: '',
         email: '',

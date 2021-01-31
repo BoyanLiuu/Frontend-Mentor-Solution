@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 import icon from '../assets/images/logo-light.png';
 import facebookLogo from '../assets/images/shared/icon-facebook.svg';
 import instagramLogo from '../assets/images/shared/icon-instagram.svg';
 import pinterestLogo from '../assets/images/shared/icon-pinterest.svg';
 import twitterLogo from '../assets/images/shared/icon-twitter.svg';
 import youtubeLogo from '../assets/images/shared/icon-youtube.svg';
-// import bgPattern from '../assets/images/shared/tablet/bg-pattern-design-pages-intro-tablet.svg';
 import bgPattern from '../assets/images/shared/desktop/bg-pattern-call-to-action.svg';
 const FooterContainer = styled.footer`
     width: 100%;
@@ -78,8 +79,8 @@ const FooterContainer = styled.footer`
     @media screen and (min-width: 768px) {
         height: 42.3rem;
         .inner-div {
-            max-width: 111.1rem;
-            margin-top: 16.7rem;
+            width: 69rem;
+            margin-top: 16.6rem;
             height: 17.7rem;
         }
         .logo {
@@ -114,6 +115,13 @@ const FooterContainer = styled.footer`
             width: 18.4rem;
             height: 2.4rem;
             align-self: flex-end;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        .inner-div {
+            width: 111.1rem;
+            margin-top: 14.4rem;
         }
     }
 `;
@@ -237,7 +245,7 @@ const Footer = () => {
     });
     return (
         <FooterContainer>
-            <TalkAboutContainer>
+            <TalkAboutContainer className="talk-about-card">
                 <div className="talk-about-text">
                     <h1>Let’s talk about your project</h1>
                     <p>
@@ -245,23 +253,26 @@ const Footer = () => {
                         find out how our expertise can help your business grow.
                     </p>
                 </div>
-                <a href="#" className="touch-btn link-btn">
+
+                <Link to="/contact" className="touch-btn link-btn">
                     GET IN TOUCH
-                </a>
+                </Link>
             </TalkAboutContainer>
 
             <div className="inner-div">
                 <div className="footer-nav">
-                    <img src={icon} alt="logo" className="logo" />
+                    <Link to="/">
+                        <img src={icon} alt="logo" className="logo" />
+                    </Link>
                     <ul className="links">
                         <li className="link">
-                            <a href="#">Our Company</a>
+                            <Link to="/about">Our Company</Link>
                         </li>
                         <li className="link">
-                            <a href="#">Location</a>
+                            <Link to="/locations">Location</Link>
                         </li>
                         <li className="link">
-                            <a href="#">Contact</a>
+                            <Link to="/contact">Contact</Link>
                         </li>
                     </ul>
                 </div>

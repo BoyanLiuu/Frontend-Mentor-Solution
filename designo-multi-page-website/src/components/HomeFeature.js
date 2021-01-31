@@ -10,26 +10,36 @@ const HomeFeatureDiv = styled.div`
     height: 139.6rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 0 2.4rem;
+    align-items: center;
+
+    .inner-container {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 32.7rem;
+    }
     margin-bottom: 31.1rem;
 
     @media screen and (min-width: 768px) {
-        max-width: 111rem;
-        padding: 0 3.9rem;
         height: 67rem;
+        .inner-container {
+            width: 69rem;
+            height: 100%;
+        }
     }
     @media screen and (min-width: 1440px) {
-        padding: 0;
         height: 41.2rem;
-        flex-direction: row;
-        margin-left: auto;
-        margin-right: auto;
+        .inner-container {
+            width: 111rem;
+            height: 100%;
+            flex-direction: row;
+        }
     }
 `;
 
 const HomeFeatureSection = styled.div`
-    width: 100%;
+    width: 32.7rem;
     height: 41.2rem;
     color: var(--dark-grey-color);
     text-align: center;
@@ -70,6 +80,7 @@ const HomeFeatureSection = styled.div`
         font-size: 20px;
         font-weight: 500;
         line-height: 26px;
+        margin-top: 4.8rem;
 
         letter-spacing: 5px;
         margin-bottom: 3.2rem;
@@ -84,11 +95,15 @@ const HomeFeatureSection = styled.div`
         height: 20.2rem;
         display: flex;
         flex-direction: column;
-        /* align-content: space-between; */
+        width: 69rem;
+        align-items: center;
         flex-wrap: wrap;
 
         .home-feature-img-container {
             margin: 0 4.8rem 0 0;
+        }
+        h1 {
+            margin-top: 4.1rem;
         }
         h1,
         p {
@@ -100,7 +115,9 @@ const HomeFeatureSection = styled.div`
     @media screen and (min-width: 1444px) {
         width: 35rem;
         height: 41.2rem;
-
+        h1 {
+            margin-top: 4.8rem;
+        }
         h1,
         p {
             width: 100%;
@@ -143,7 +160,11 @@ const HomeFeature = () => {
         );
     });
 
-    return <HomeFeatureDiv>{renderList}</HomeFeatureDiv>;
+    return (
+        <HomeFeatureDiv>
+            <div className="inner-container">{renderList}</div>
+        </HomeFeatureDiv>
+    );
 };
 
 export default HomeFeature;

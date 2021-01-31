@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import React from 'react';
 import arrow from '../assets/images/shared/icon-right-arrow.svg';
 const DesignViewDiv = styled.div`
@@ -16,7 +17,6 @@ const DesignViewDiv = styled.div`
     align-items: center;
     position: relative;
     cursor: pointer;
-
     &::before {
         content: '';
         width: 100%;
@@ -65,34 +65,57 @@ const DesignViewDiv = styled.div`
         bottom: 6px;
     }
     @media screen and (min-width: 768px) {
+        width: 68.9rem;
+        height: 20rem;
+        background-image: url(${(prop) => prop.tabletLogo});
+
+        h1 {
+            font-size: 4rem;
+            line-height: 4.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 2.4rem;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        width: 54.1rem;
+        height: ${(prop) =>
+            prop.svgName === 'web-design-large' ? '64rem' : '30.8rem'};
+        background-image: url(${(prop) => prop.desktopLogo});
+        flex-wrap: wrap;
     }
 `;
 
-const DesignView = ({ title, svgName, width, height }) => {
+const DesignView = ({ title, svgName, width, height, home }) => {
     const mobilLogo = require(`../assets/images/home/mobile/image-${svgName}-design.jpg`)
         .default;
     const tabletLogo = require(`../assets/images/home/tablet/image-${svgName}-design.jpg`)
         .default;
     let desktopLogo;
+    const urlName = svgName;
     if (svgName !== 'web')
         desktopLogo = require(`../assets/images/home/desktop/image-${svgName}-design.jpg`)
             .default;
     else {
-        svgName = height === '64rem' ? 'web-design-large' : 'web-design-small';
+        svgName = home === 'true' ? 'web-design-large' : 'web-design-small';
+
         desktopLogo = require(`../assets/images/home/desktop/image-${svgName}.jpg`)
             .default;
     }
 
     return (
-        <DesignViewDiv
-            mobilLogo={mobilLogo}
-            tabletLogo={tabletLogo}
-            desktopLogo={desktopLogo}
-            width={width}
-            height={height}>
-            <h1>{title}</h1>
-            <h3>View Projects</h3>
-        </DesignViewDiv>
+        <Link to={`/${urlName}`}>
+            <DesignViewDiv
+                mobilLogo={mobilLogo}
+                tabletLogo={tabletLogo}
+                desktopLogo={desktopLogo}
+                width={width}
+                height={height}
+                svgName={svgName}>
+                <h1>{title}</h1>
+                <h3>View Projects</h3>
+            </DesignViewDiv>
+        </Link>
     );
 };
 

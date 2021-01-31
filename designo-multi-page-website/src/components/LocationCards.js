@@ -21,7 +21,6 @@ const StyledLocationsCardsContainer = styled.div`
         width: 202px;
         height: 202px;
         position: relative;
-        z-index: 2;
         margin-bottom: 4.8rem;
     }
 

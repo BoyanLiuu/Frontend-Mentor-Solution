@@ -42,7 +42,7 @@ const FooterContainer = styled.footer`
     }
     .link {
         list-style: none;
-        transition: border 0.7s ease;
+        transition: border 0.3s ease;
     }
     .link:hover {
         border-bottom: 1px solid white;

@@ -53,7 +53,7 @@ export const GlobalStyle = createGlobalStyle`
         border-radius: 0.8rem;
         padding: 1.7rem 0;
         transition: 0.2s background-color ease-in-out;
-        z-index: 2;
+        : 2;
     }
     .link-btn:hover{
         color: var(--white-color);

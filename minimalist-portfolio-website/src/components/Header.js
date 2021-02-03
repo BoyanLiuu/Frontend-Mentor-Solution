@@ -1,59 +1,78 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import logo from '../assets/images/icons/down-arrows.svg';
+// import hamburger from '../assets/images/icons/hamburger.svg';
+// import closeIcon from '../assets/images/icons/close.svg';
 import React from 'react';
-const HeaderDiv = styled.header`
-    width: 100%;
-    height: 3.2rem;
-    nav {
-        width: 31.1rem;
-        height: 100%;
-    }
-    @media screen and (min-width: 1440px) {
-    }
-`;
 
 const Header = () => {
     const handleClick = () => {
-        const backdrop = document.querySelector('.header-backdrop');
-        const linkContainer = document.querySelector('.link-container');
-        const burger = document.querySelector('.burgerIcon');
-
+        const burger = document.querySelector('.header__burger');
+        burger.classList.toggle('active');
+        console.log('wtf');
+        // const linkContainer = document.querySelector('.link-container');
+        // const burger = document.querySelector('.burgerIcon');
         // if (backdrop.classList.contains('active-opacity')) {
         //     burger.style.backgroundImage = `url(${burgerIcon})`;
         // } else {
         //     burger.style.backgroundImage = `url(${closeIcon})`;
         // }
-        backdrop.classList.toggle('active-opacity');
-        linkContainer.classList.toggle('active');
+        // backdrop.classList.toggle('active-opacity');
+        // linkContainer.classList.toggle('active');
     };
     return (
-        <HeaderDiv>
+        <header className="header">
             <nav>
-                <a href="/index.html">
-                    <img
-                        src="/assets/shared/desktop/logo-dark.png"
-                        alt="logo"
-                        className="logo"
-                    />
-                </a>
-
-                <ul className="links">
-                    <li className="link">
-                        <Link to="/">home</Link>
+                <div className="header__logo icon--cursor" />
+                <div
+                    className="header__burger icon--cursor"
+                    onClick={handleClick}
+                />
+                <ul className="header__nav-items hide">
+                    <li className="header__nav-item">
+                        <Link
+                            className="header__nav-item_link  header__nav-item_link--active"
+                            to="/">
+                            Home
+                        </Link>
                     </li>
-                    <li className="link">
-                        <Link to="/portfolio">Portfolio</Link>
+                    <li className="header__nav-item">
+                        <Link
+                            className="header__nav-item_link  header__nav-item_link--active"
+                            to="/">
+                            Portfolio
+                        </Link>
+                        <a className="t-nav-link t-dark-gray" to="/">
+                            Portfolio
+                        </a>
                     </li>
-                    <li className="link">
-                        <Link to="/contact">Contact Me</Link>
+                    <li className="header__nav-item">
+                        <Link
+                            className="header__nav-item_link  header__nav-item_link--active"
+                            to="/">
+                            Contact Me
+                        </Link>
                     </li>
                 </ul>
 
-                <div class="menu-btn__burger"></div>
+                <ul className="header__mobile-nav-items">
+                    <li className="header__mobile-nav-item">
+                        <a className="header__mobile-nav-link" to="/">
+                            Home
+                        </a>
+                    </li>
+                    <li className="mobile-nav__nav-item">
+                        <a className="header__mobile-nav-link" to="/">
+                            Portfolio
+                        </a>
+                    </li>
+                    <li className="mobile-nav__nav-item">
+                        <a className="header__mobile-nav-link" to="/">
+                            Contact Me
+                        </a>
+                    </li>
+                </ul>
             </nav>
-        </HeaderDiv>
+        </header>
     );
 };
 

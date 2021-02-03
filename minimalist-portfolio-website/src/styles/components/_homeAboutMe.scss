@@ -1,0 +1,26 @@
+.aboutme-container {
+    margin-top: 11.5rem;
+    display: flex;
+    flex-direction: column;
+
+    &__info {
+        height: 61.7rem;
+        margin-top: 3.2rem;
+        border-top: 1px solid $dark-blue-opacity-color;
+        h1 {
+            @include phone-heading;
+            margin: 3.3rem 0 2.8rem 0;
+        }
+        p {
+            @include phone-home-text;
+            opacity: 0.8;
+        }
+    }
+
+    &__link-btn {
+        margin-top: 2.4rem;
+        @include link-btn(20.2rem, 4.8rem, white, $dark-blue-color);
+        justify-content: center;
+        border: 1px solid $dark-blue-color;
+    }
+}

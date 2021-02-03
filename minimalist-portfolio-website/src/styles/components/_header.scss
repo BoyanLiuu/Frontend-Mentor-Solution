@@ -1,0 +1,34 @@
+.header {
+    width: $phone-view-width;
+    height: 3.2rem;
+    margin: 3.2rem 0 4rem 0;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__logo {
+        width: 6rem;
+        height: 3.2rem;
+        background-image: url('../../assets/images/logo.svg');
+    }
+
+    &__burger {
+        width: 2.4rem;
+        height: 1.3rem;
+        background-image: url('../../assets/images/icons/hamburger.svg');
+        align-self: center;
+    }
+    &__burger.active {
+        width: 1.768rem;
+        height: 1.768rem;
+        background-image: url('../../assets/images/icons/close.svg');
+    }
+
+    &__nav-items {
+        display: none;
+    }
+    &__mobile-nav-items {
+        display: none;
+    }
+}

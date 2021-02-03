@@ -1,0 +1,29 @@
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 9.6rem;
+    & h1 {
+        @include phone-heading;
+        margin: 2.4rem 0 3.2rem 0;
+    }
+    &__about-me-btn {
+        @include link-btn(20rem, 4.8rem, $dark-blue-color, white);
+
+        .hero-container__about-logo {
+            width: 4.8rem;
+            height: 4.8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                width: 1.6rem;
+                height: 1.2rem;
+            }
+        }
+
+        span {
+            width: 15.2rem;
+            text-align: center;
+        }
+    }
+}

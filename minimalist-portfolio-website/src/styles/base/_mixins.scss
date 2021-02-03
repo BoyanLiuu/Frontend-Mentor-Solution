@@ -35,3 +35,19 @@
     line-height: 1.6rem;
     letter-spacing: 2px;
 }
+
+@mixin phone-link-text {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    font-family: $body-font-family;
+    letter-spacing: 0.2rem;
+}
+
+@mixin flex-col-space-between-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}

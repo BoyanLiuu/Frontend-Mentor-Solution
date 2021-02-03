@@ -58,27 +58,35 @@ const FooterContainer = styled.footer`
 
     @media screen and (min-width: 700px) {
         height: 15rem;
+        width: 100%;
+
         .inner-div {
             width: 100%;
             height: 100%;
-            padding: 0 16.5rem;
-
+            padding: 0 3rem;
             flex-direction: row;
-            justify-content: space-between;
         }
         .links {
             height: 7.2rem;
-            width: 63.5rem;
+            width: 50rem;
 
             flex-wrap: wrap;
+            text-align: left;
         }
         .link {
             display: inline-block;
-            width: 25.5rem;
+            width: auto;
             height: 3rem;
         }
         .social-icon-container {
             width: 12rem;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        .inner-div {
+            width: 111rem;
+            padding: 0;
         }
     }
 `;

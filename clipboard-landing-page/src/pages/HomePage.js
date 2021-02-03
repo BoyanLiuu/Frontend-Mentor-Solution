@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import Header from '../components/Header';
 import InfoSection from '../components/Info';
 import Footer from '../components/Footer';
-const StyledMainPageContainer = styled.div``;
+const StyledMainPageContainer = styled.div`
+    overflow: hidden;
+`;
 
 function HomePage() {
     return (

@@ -1,0 +1,51 @@
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 11.5rem;
+    &__contact-section {
+        width: 31.1rem;
+        height: 21.4rem;
+        margin-bottom: 8rem;
+
+        p {
+            @include phone-heading;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+    }
+    &__contact_link {
+        @include link-btn(16.2rem, 4.8rem, white, $dark-blue-color);
+        justify-content: center;
+        border: 1px solid $dark-blue-color;
+        margin: 0 auto;
+    }
+
+    & footer {
+        width: 100%;
+        height: 35.4rem;
+        background-color: $dark-blue-color;
+        @include flex-col-space-between-center;
+        .inner-container {
+            width: 10.4rem;
+            height: 24.2rem;
+            margin-top: 5.6rem;
+            @include flex-col-space-between-center;
+            &-items {
+                @include flex-col-space-between-center;
+                width: 9.8rem;
+                height: 10.6rem;
+                list-style: none;
+            }
+            &__item_link {
+                @include phone-link-text;
+            }
+
+            &__social-logos {
+                width: 100%;
+                height: 2.4rem;
+            }
+        }
+    }
+}

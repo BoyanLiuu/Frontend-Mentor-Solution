@@ -2,11 +2,12 @@
     margin-top: 11.5rem;
     display: flex;
     flex-direction: column;
-
+    border-bottom: 1px solid $dark-blue-opacity-color;
     &__info {
         height: 61.7rem;
         margin-top: 3.2rem;
         border-top: 1px solid $dark-blue-opacity-color;
+
         h1 {
             @include phone-heading;
             margin: 3.3rem 0 2.8rem 0;

@@ -34,6 +34,7 @@
     font-size: 1.2rem;
     line-height: 1.6rem;
     letter-spacing: 2px;
+    transition: 0.3s all ease;
 }
 
 @mixin phone-link-text {
@@ -50,4 +51,29 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+@mixin border-top-bottom {
+    border-top: $border-opacity-style;
+    border-bottom: $border-opacity-style;
+}
+@mixin secondary-btn-hover {
+    color: white;
+    background-color: $grayish-dark-blue-color;
+}
+
+@mixin main-project-title {
+    font-family: $heading-font-family;
+    font-size: 3.2rem;
+    font-weight: 400;
+    line-height: 4.2rem;
+    letter-spacing: -0.28px;
+    color: $grayish-dark-blue-color;
+}
+
+@mixin main-project-subtext {
+    opacity: 0.8;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    font-family: $body-font-family;
+    color: $dark-blue-color;
 }

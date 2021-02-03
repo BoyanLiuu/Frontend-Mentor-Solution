@@ -4,7 +4,7 @@ const HomeAboutMe = ({ viewport }) => {
     const aboutImg = require(`../assets/images/homepage/${viewport}/image-homepage-profile@2x.jpg`)
         .default;
     return (
-        <div className="aboutme-container">
+        <div className="aboutme-container" id="about-me">
             <img
                 src={aboutImg}
                 alt="about me img"

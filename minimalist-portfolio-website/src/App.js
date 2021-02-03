@@ -36,7 +36,7 @@ function App() {
                         <Route
                             exact
                             path="/portfoliodetail"
-                            component={PortfolioDetail}
+                            render={() => <PortfolioDetail viewport={size} />}
                         />
                     </Switch>
                 </div>

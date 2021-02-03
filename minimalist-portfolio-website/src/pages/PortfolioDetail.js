@@ -2,21 +2,95 @@
 import { GlobalStyle } from '../Theme';
 
 import { useEffect } from 'react';
+import data from '../assets/data/data';
+import { Link } from 'react-router-dom';
+import { ReactComponent as LeftIcon } from '../assets/images/icons/arrow-left.svg';
+import { ReactComponent as RightIcon } from '../assets/images/icons/arrow-right.svg';
 
-import Header from '../components/Header';
+function PortfolioDetail({ viewport }) {
+    let curIdx = 0;
+    const {
+        projectName,
+        projectBg,
+        projectSummary,
+        projectSkills,
+        projectType,
+        imgName,
+    } = data[curIdx];
 
-function PortfolioDetail() {
+    // find next/ prev index
+    let nextIdx = 0;
+    let prevIdx = 0;
+    if (curIdx === 0) {
+        nextIdx = 1;
+        prevIdx = 3;
+    } else if (curIdx === 3) {
+        nextIdx = 0;
+        prevIdx = 2;
+    } else {
+        nextIdx = curIdx - 1;
+        prevIdx = curIdx + 1;
+    }
+
     useEffect(() => {
         window.scrollTo(0, 0);
     });
 
+    const postfix = viewport === 'desktop' ? `@2x` : '';
+
+    const staticImg1 = require(`../assets/images/detail/${viewport}/image-${imgName}-preview-1${postfix}.jpg`)
+        .default;
+
+    const staticImg2 = require(`../assets/images/detail/${viewport}/image-${imgName}-preview-2${postfix}.jpg`)
+        .default;
+    const heroImg = require(`../assets/images/detail/${viewport}/image-${imgName}-hero${postfix}.jpg`)
+        .default;
     return (
-        <div>
-            <GlobalStyle />
-            <main>
-                <Header />
-            </main>
-        </div>
+        <>
+            <div className="project-main-container">
+                <img
+                    src={heroImg}
+                    alt="hero"
+                    className="project-main-container__img"
+                />
+                <div className="project-detail">
+                    <h1 className="project-detail__name">{projectName}</h1>
+                    <p className="project-detail__summary">{projectSummary}</p>
+                    <p className="project-detail__type">{projectType}</p>
+                    <p className="project-detail__skills">{projectSkills}</p>
+
+                    <a href="#" className="project-detail__link-btn">
+                        View Website
+                    </a>
+                </div>
+
+                <div className="project-main-container__background">
+                    <h1>Project Background</h1>
+                    <p>{projectBg}</p>
+                </div>
+                <div className="project-main-container__static-preview">
+                    <h1>Static Previews</h1>
+                    <img src={staticImg1} alt="preview 1" />
+                    <img src={staticImg2} alt="preview 2" />
+                </div>
+            </div>
+            <div className="slider-container">
+                <Link to="/portfolio" className="slider-container__btn">
+                    <div className="slider-container__info">
+                        <LeftIcon className="slider-container__icon" />
+                        <p>Manage</p>
+                        <p>Previous Project</p>
+                    </div>
+                </Link>
+                <Link to="/portfolio" className="slider-container__btn">
+                    <div className="slider-container__info">
+                        <RightIcon className="slider-container__icon" />
+                        <p>Insure</p>
+                        <p>Next Project</p>
+                    </div>
+                </Link>
+            </div>
+        </>
     );
 }
 

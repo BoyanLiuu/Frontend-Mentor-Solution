@@ -6,6 +6,7 @@ $grayish-dark-blue-color: hsl(245, 10%, 22%);
 $light-gray-bg-color: hsl(0, 0%, 98%);
 $light-grey-text-field-color: hsl(240, 2%, 92%);
 $bright-red-error-color: hsl(0, 90%, 57%);
+
 //FONT SIZE
 
 //FONT FAMILY
@@ -14,3 +15,6 @@ $body-font-family: 'Public Sans', sans-serif;
 
 //CONTAINER WIDTH:
 $phone-view-width: 31.1rem;
+
+$border-opacity-style: 1px solid $dark-blue-opacity-color;
+$border-style: 1px solid $dark-blue-color;

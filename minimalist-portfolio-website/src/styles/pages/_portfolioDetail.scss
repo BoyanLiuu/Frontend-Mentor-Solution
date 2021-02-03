@@ -1,0 +1,109 @@
+.project-main-container {
+    &__img {
+        margin-bottom: 4rem;
+    }
+    .project-detail {
+        @include border-top-bottom;
+        margin-bottom: 4.8rem;
+        height: 45.2rem;
+        &__name {
+            @include phone-heading;
+            margin: 2.5rem 0 2.4rem 0;
+        }
+        &__type,
+        &__skills {
+            font-size: 1.3rem;
+            line-height: 3rem;
+            font-weight: 700;
+            font-family: $body-font-family;
+            color: $slightly-desaturated-cyan-color;
+        }
+        &__summary {
+            @include main-project-subtext;
+        }
+        &__link-btn {
+            border: $border-style;
+            @include link-btn(17.8rem, 4.8rem, white, $dark-blue-color);
+            margin-top: 2.4rem;
+            justify-content: center;
+        }
+    }
+    &__background {
+        h1 {
+            @include main-project-title;
+        }
+        p {
+            @include main-project-subtext;
+            margin-top: 3.8rem;
+        }
+        margin-bottom: 4rem;
+    }
+    &__static-preview {
+        h1 {
+            @include main-project-title;
+            margin-bottom: 4rem;
+        }
+        img:first-of-type {
+            margin-bottom: 3.3rem;
+        }
+        margin-bottom: 6.5rem;
+    }
+}
+
+.slider-container {
+    width: 100%;
+    height: 14.8rem;
+    display: flex;
+
+    &__btn {
+        border: $border-opacity-style;
+        width: 50%;
+        height: 100%;
+        display: block;
+    }
+    p {
+        transition: 0.3s color ease;
+    }
+
+    &__btn:hover &__info p {
+        color: $slightly-desaturated-cyan-color;
+    }
+    &__btn:first-child {
+        border-left: none;
+        border-right: none;
+    }
+    &__btn:last-child {
+        border-right: none;
+    }
+    &__icon {
+        width: 1rem;
+        height: 1.6rem;
+        margin-bottom: 1.6rem;
+    }
+    &__info {
+        height: 9.8rem;
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: column;
+
+        p:first-of-type {
+            @include main-project-title;
+            line-height: 3.6rem;
+            color: $grayish-dark-blue-color;
+        }
+        p:last-of-type {
+            @include main-project-subtext;
+
+            opacity: 0.5;
+            font-size: 1.6rem;
+        }
+    }
+
+    &__btn:last-of-type &__info {
+        align-items: flex-end;
+    }
+}
+
+.test path {
+    stroke: $slightly-desaturated-cyan-color;
+}

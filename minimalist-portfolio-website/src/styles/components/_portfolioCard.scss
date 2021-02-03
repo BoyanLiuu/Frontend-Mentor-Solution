@@ -1,0 +1,27 @@
+.portfolio-card {
+    &__img {
+        width: 100%;
+        margin-bottom: 3.2rem;
+    }
+    &__info {
+        height: 36.8rem;
+
+        @include border-top-bottom;
+    }
+    &__title {
+        @include phone-heading;
+        margin: 2.5rem 0 2.4rem 0;
+    }
+    &__detail {
+        @include phone-subtext;
+        margin-bottom: 2.4rem;
+    }
+    &__link-btn {
+        @include link-btn(17.5rem, 4.8rem, white, $dark-blue-color);
+        border: $border-style;
+        justify-content: center;
+    }
+    &__link-btn:hover {
+        @include secondary-btn-hover;
+    }
+}

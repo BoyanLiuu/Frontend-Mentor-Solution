@@ -43,21 +43,27 @@ const Footer = () => {
                     </ul>
 
                     <div className="inner-container__social-logos">
-                        <img
-                            src={github}
-                            alt="github"
-                            className="inner-container__social-logo"
-                        />
-                        <img
-                            src={twitter}
-                            alt="twitter"
-                            className="inner-container__social-logo"
-                        />
-                        <img
-                            src={linkedIn}
-                            alt="linkedIn"
-                            className="inner-container__social-logo"
-                        />
+                        <a href="https://github.com/">
+                            <img
+                                src={github}
+                                alt="github"
+                                className="inner-container__social-logo"
+                            />
+                        </a>
+                        <a href="https://twitter.com/">
+                            <img
+                                src={twitter}
+                                alt="twitter"
+                                className="inner-container__social-logo"
+                            />
+                        </a>
+                        <a href="https://www.linkedin.com/">
+                            <img
+                                src={linkedIn}
+                                alt="linkedIn"
+                                className="inner-container__social-logo"
+                            />
+                        </a>
                     </div>
                 </div>
             </footer>

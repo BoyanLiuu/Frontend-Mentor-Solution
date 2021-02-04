@@ -35,8 +35,8 @@ function App() {
                         />
                         <Route
                             exact
-                            path="/portfoliodetail"
-                            render={() => <PortfolioDetail viewport={size} />}
+                            path="/portfolio/:work"
+                            render={() => <PortfolioDetail viewport={size}/>}
                         />
                     </Switch>
                 </div>

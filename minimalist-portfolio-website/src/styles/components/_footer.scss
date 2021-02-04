@@ -43,13 +43,6 @@
             &__item_link {
                 @include phone-link-text;
             }
-
-            &__social-logos {
-                width: 100%;
-                height: 2.4rem;
-                display: flex;
-                justify-content: space-between;
-            }
         }
     }
 }

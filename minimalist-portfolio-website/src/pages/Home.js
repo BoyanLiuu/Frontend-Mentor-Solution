@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import Hero from '../components/HomeHero';
 import HomeAboutMe from '../components/HomeAboutMe';

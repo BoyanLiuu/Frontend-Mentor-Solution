@@ -1,14 +1,17 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { GlobalStyle } from '../Theme';
+
 
 import { useEffect } from 'react';
-import data from '../assets/data/data';
-import { Link } from 'react-router-dom';
+import {projectDesc as data,getCorrectObj} from '../assets/data/data';
+import { Link,useParams } from 'react-router-dom';
 import { ReactComponent as LeftIcon } from '../assets/images/icons/arrow-left.svg';
 import { ReactComponent as RightIcon } from '../assets/images/icons/arrow-right.svg';
 
 function PortfolioDetail({ viewport }) {
-    let curIdx = 0;
+    let { work } =useParams();
+  
+    let curIdx = getCorrectObj[work];
+
     const {
         projectName,
         projectBg,
@@ -28,10 +31,12 @@ function PortfolioDetail({ viewport }) {
         nextIdx = 0;
         prevIdx = 2;
     } else {
-        nextIdx = curIdx - 1;
-        prevIdx = curIdx + 1;
+        nextIdx = curIdx + 1;
+        prevIdx = curIdx - 1;
     }
 
+    const nextName =data[nextIdx].projectName;
+    const prevName =data[prevIdx].projectName;
     useEffect(() => {
         window.scrollTo(0, 0);
     });
@@ -74,18 +79,19 @@ function PortfolioDetail({ viewport }) {
                     <img src={staticImg2} alt="preview 2" />
                 </div>
             </div>
+
             <div className="slider-container">
-                <Link to="/portfolio" className="slider-container__btn">
+                <Link to={`/portfolio/${prevName.toLowerCase()}`} className="slider-container__btn">
                     <div className="slider-container__info">
                         <LeftIcon className="slider-container__icon" />
-                        <p>Manage</p>
+                        <p>{prevName}</p>
                         <p>Previous Project</p>
                     </div>
                 </Link>
-                <Link to="/portfolio" className="slider-container__btn">
+                <Link to={`/portfolio/${nextName.toLowerCase()}`} className="slider-container__btn">
                     <div className="slider-container__info">
                         <RightIcon className="slider-container__icon" />
-                        <p>Insure</p>
+                        <p>{nextName}</p>
                         <p>Next Project</p>
                     </div>
                 </Link>

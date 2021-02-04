@@ -15,6 +15,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
             img {
                 width: 1.6rem;
                 height: 1.2rem;
@@ -24,6 +25,13 @@
         span {
             width: 15.2rem;
             text-align: center;
+        }
+        &:hover {
+            background-color: $slightly-desaturated-cyan-color;
+        }
+        &:hover .hero-container__about-logo {
+            filter: brightness(1.5);
+            background-color: $dark-blue-opacity-color;
         }
     }
 }

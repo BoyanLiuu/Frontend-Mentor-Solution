@@ -23,5 +23,8 @@
         @include link-btn(20.2rem, 4.8rem, white, $dark-blue-color);
         justify-content: center;
         border: 1px solid $dark-blue-color;
+        &:hover {
+            @include secondary-btn-hover;
+        }
     }
 }

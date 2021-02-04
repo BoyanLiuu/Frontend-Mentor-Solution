@@ -1,9 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/logoWhite.svg';
-import github from '../assets/images/icons/github.svg';
-import twitter from '../assets/images/icons/twitter.svg';
-import linkedIn from '../assets/images/icons/linkedin.svg';
+import SocialIcons from '../components/SocialIcons';
 const Footer = () => {
     return (
         <div className="footer-container">
@@ -12,7 +10,7 @@ const Footer = () => {
                     Interested in doing a project together?
                 </p>
 
-                <Link className="footer-container__contact_link" to="/">
+                <Link className="footer-container__contact_link" to="/contact">
                     Contact Me
                 </Link>
             </div>
@@ -41,30 +39,7 @@ const Footer = () => {
                             </Link>
                         </li>
                     </ul>
-
-                    <div className="inner-container__social-logos">
-                        <a href="https://github.com/">
-                            <img
-                                src={github}
-                                alt="github"
-                                className="inner-container__social-logo"
-                            />
-                        </a>
-                        <a href="https://twitter.com/">
-                            <img
-                                src={twitter}
-                                alt="twitter"
-                                className="inner-container__social-logo"
-                            />
-                        </a>
-                        <a href="https://www.linkedin.com/">
-                            <img
-                                src={linkedIn}
-                                alt="linkedIn"
-                                className="inner-container__social-logo"
-                            />
-                        </a>
-                    </div>
+                    <SocialIcons />
                 </div>
             </footer>
         </div>

@@ -1,0 +1,9 @@
+.social-logos {
+    width: 10.4rem;
+    height: 2.4rem;
+    display: flex;
+    justify-content: space-between;
+    :nth-child(2) {
+        margin-top: 0.15rem;
+    }
+}

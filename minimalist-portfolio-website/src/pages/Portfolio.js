@@ -1,5 +1,4 @@
 import PortfolioCard from '../components/PortfolioCard';
-import xx from '../assets/images/portfolio/desktop/image-portfolio-bookmark@2x.jpg';
 import { useEffect } from 'react';
 
 function About({ viewport }) {

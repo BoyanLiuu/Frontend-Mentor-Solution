@@ -5,7 +5,6 @@
     .project-detail {
         @include border-top-bottom;
         margin-bottom: 4.8rem;
-        height: 45.2rem;
         &__name {
             @include phone-heading;
             margin: 2.5rem 0 2.4rem 0;
@@ -26,6 +25,10 @@
             @include link-btn(17.8rem, 4.8rem, white, $dark-blue-color);
             margin-top: 2.4rem;
             justify-content: center;
+            margin-bottom: 2.4rem;
+        }
+        &__link-btn:hover {
+            @include secondary-btn-hover;
         }
     }
     &__background {
@@ -68,6 +71,9 @@
     &__btn:hover &__info p {
         color: $slightly-desaturated-cyan-color;
     }
+    &__btn:hover &__icon path {
+        stroke: $slightly-desaturated-cyan-color;
+    }
     &__btn:first-child {
         border-left: none;
         border-right: none;
@@ -102,8 +108,4 @@
     &__btn:last-of-type &__info {
         align-items: flex-end;
     }
-}
-
-.test path {
-    stroke: $slightly-desaturated-cyan-color;
 }

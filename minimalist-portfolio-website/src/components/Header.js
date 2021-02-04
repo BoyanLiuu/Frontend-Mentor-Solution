@@ -8,7 +8,6 @@ const Header = () => {
     const handleClick = () => {
         const burger = document.querySelector('.header__burger');
         burger.classList.toggle('active');
-        console.log('wtf');
         // const linkContainer = document.querySelector('.link-container');
         // const burger = document.querySelector('.burgerIcon');
         // if (backdrop.classList.contains('active-opacity')) {
@@ -22,7 +21,12 @@ const Header = () => {
     return (
         <header className="header">
             <nav>
-                <div className="header__logo icon--cursor" />
+
+            <Link
+            to="/">
+            <div className="header__logo icon--cursor" />
+        </Link>
+                
                 <div
                     className="header__burger icon--cursor"
                     onClick={handleClick}

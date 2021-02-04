@@ -1,4 +1,4 @@
-const projectDesc = [
+export const projectDesc = [
     {
         projectName: 'Manage',
         projectBg:
@@ -40,4 +40,10 @@ const projectDesc = [
         imgName: 'fylo',
     },
 ];
-export default projectDesc;
+
+export const getCorrectObj ={
+    'manage':0,
+    'bookmark':1,
+    'insure':2,
+    'fylo':3
+}

@@ -24,4 +24,68 @@
             margin-bottom: 2.4rem;
         }
     }
+    &__input-container:nth-of-type(2) {
+        margin: 2.4rem 0;
+    }
+    &__input-label {
+        display: block;
+        @include phone-subtext;
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+    }
+    &__input-container {
+        width: 100%;
+    }
+    &__input-field {
+        height: 4.8rem;
+        width: 100%;
+        border: none;
+        outline: none;
+        background-color: $dark-blue-opacity-color;
+        font-size: 1.3rem;
+        font-weight: 400;
+        font-family: $body-font-family;
+        padding-left: 1.6rem;
+        &::placeholder {
+            color: hsla(205, 41%, 21%, 0.4);
+        }
+        &:focus {
+            border: 1px solid $slightly-desaturated-cyan-color;
+        }
+    }
+
+    textarea {
+        height: 9.6rem;
+        padding-top: 0.9rem;
+    }
+
+    &__input-error-message {
+        display: none;
+        color: red;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        font-weight: 4rem;
+        font-style: italic;
+        font-family: $body-font-family;
+        margin-top: 0.4rem;
+    }
+
+    &__btn {
+        @include link-btn(20rem, 4.8rem, $dark-blue-color, white);
+
+        outline: none;
+        cursor: pointer;
+        font-weight: 400;
+        justify-content: center;
+        margin-top: 2.4rem;
+        &:hover {
+            color: $grayish-dark-blue-color;
+            background-color: white;
+        }
+    }
+
+    .flag {
+        border: 1px solid red;
+    }
 }

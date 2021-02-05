@@ -35,3 +35,32 @@
         }
     }
 }
+
+@media (min-width: 768px) {
+    .hero-container {
+        position: relative;
+        &__text {
+            position: absolute;
+            bottom: 0;
+            width: 51.47rem;
+            height: 27.8rem;
+            background-color: white;
+            h1 {
+                width: 45.8rem;
+                margin: 5.4rem 0 4.8rem 0;
+            }
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .hero-container {
+        &__text {
+            width: 44.5rem;
+            height: 35.7rem;
+            h1 {
+                width: 39rem;
+            }
+        }
+    }
+}

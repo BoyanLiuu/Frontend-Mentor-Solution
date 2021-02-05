@@ -5,6 +5,8 @@
     width: 100%;
     margin-top: 11.5rem;
     &__contact-section {
+        display: flex;
+        flex-direction: column;
         width: 31.1rem;
         height: 21.4rem;
         margin-bottom: 8rem;
@@ -34,7 +36,7 @@
             height: 24.2rem;
             margin-top: 5.6rem;
             @include flex-col-space-between-center;
-            &-items {
+            &__items {
                 @include flex-col-space-between-center;
                 width: 9.8rem;
                 height: 10.6rem;
@@ -42,6 +44,65 @@
             }
             &__item_link {
                 @include phone-link-text;
+
+                &:hover {
+                    color: $slightly-desaturated-cyan-color;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        margin-top: 8rem;
+        width: 100%;
+        &__contact-section {
+            flex-direction: row;
+            width: $tablet-view-width;
+            height: 8.4rem;
+            justify-content: space-between;
+
+            p {
+                width: 35rem;
+                height: 100%;
+            }
+        }
+        &__contact_link {
+            width: 16.2rem;
+            margin: 0;
+        }
+        & footer {
+            height: 8rem;
+            .inner-container {
+                margin: auto 0 auto 0;
+                height: 3.2rem;
+                flex-direction: row;
+                justify-content: space-between;
+                width: $tablet-view-width;
+
+                &__items {
+                    width: 30.9rem;
+                    height: 1.4rem;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .footer-container {
+        margin-top: 11.5rem;
+
+        &__contact-section {
+            width: $desktop-view-width;
+        }
+
+        & footer {
+            .inner-container {
+                width: $desktop-view-width;
             }
         }
     }

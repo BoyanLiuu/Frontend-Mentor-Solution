@@ -1,15 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-
 import { useEffect } from 'react';
-import {projectDesc as data,getCorrectObj} from '../assets/data/data';
-import { Link,useParams } from 'react-router-dom';
+import { projectDesc as data, getCorrectObj } from '../assets/data/data';
+import { Link, useParams } from 'react-router-dom';
 import { ReactComponent as LeftIcon } from '../assets/images/icons/arrow-left.svg';
 import { ReactComponent as RightIcon } from '../assets/images/icons/arrow-right.svg';
 
 function PortfolioDetail({ viewport }) {
-    let { work } =useParams();
-  
+    let { work } = useParams();
+
     let curIdx = getCorrectObj[work];
 
     const {
@@ -35,8 +34,8 @@ function PortfolioDetail({ viewport }) {
         prevIdx = curIdx - 1;
     }
 
-    const nextName =data[nextIdx].projectName;
-    const prevName =data[prevIdx].projectName;
+    const nextName = data[nextIdx].projectName;
+    const prevName = data[prevIdx].projectName;
     useEffect(() => {
         window.scrollTo(0, 0);
     });
@@ -58,37 +57,48 @@ function PortfolioDetail({ viewport }) {
                     alt="hero"
                     className="project-main-container__img"
                 />
-                <div className="project-detail">
-                    <h1 className="project-detail__name">{projectName}</h1>
-                    <p className="project-detail__summary">{projectSummary}</p>
-                    <p className="project-detail__type">{projectType}</p>
-                    <p className="project-detail__skills">{projectSkills}</p>
+                <div className="project-main-container__bottom">
+                    <div className="project-detail">
+                        <h1 className="project-detail__name">{projectName}</h1>
+                        <p className="project-detail__summary">
+                            {projectSummary}
+                        </p>
+                        <p className="project-detail__type">{projectType}</p>
+                        <p className="project-detail__skills">
+                            {projectSkills}
+                        </p>
 
-                    <a href="#" className="project-detail__link-btn">
-                        View Website
-                    </a>
-                </div>
-
-                <div className="project-main-container__background">
-                    <h1>Project Background</h1>
-                    <p>{projectBg}</p>
-                </div>
-                <div className="project-main-container__static-preview">
-                    <h1>Static Previews</h1>
-                    <img src={staticImg1} alt="preview 1" />
-                    <img src={staticImg2} alt="preview 2" />
+                        <a href="#" className="project-detail__link-btn">
+                            View Website
+                        </a>
+                    </div>
+                    <div>
+                        <div className="project-main-container__background">
+                            <h1>Project Background</h1>
+                            <p>{projectBg}</p>
+                        </div>
+                        <div className="project-main-container__static-preview">
+                            <h1>Static Previews</h1>
+                            <img src={staticImg1} alt="preview 1" />
+                            <img src={staticImg2} alt="preview 2" />
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div className="slider-container">
-                <Link to={`/portfolio/${prevName.toLowerCase()}`} className="slider-container__btn">
+                <Link
+                    to={`/portfolio/${prevName.toLowerCase()}`}
+                    className="slider-container__btn">
                     <div className="slider-container__info">
                         <LeftIcon className="slider-container__icon" />
                         <p>{prevName}</p>
                         <p>Previous Project</p>
                     </div>
                 </Link>
-                <Link to={`/portfolio/${nextName.toLowerCase()}`} className="slider-container__btn">
+                <Link
+                    to={`/portfolio/${nextName.toLowerCase()}`}
+                    className="slider-container__btn">
                     <div className="slider-container__info">
                         <RightIcon className="slider-container__icon" />
                         <p>{nextName}</p>

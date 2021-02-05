@@ -22,19 +22,23 @@ const Footer = () => {
                         alt="logo"
                         className="inner-container__logo"
                     />
-                    <ul className="inner-container-items">
+                    <ul className="inner-container__items">
                         <li className="inner-container-item">
                             <Link className="inner-container__item_link" to="/">
                                 Home
                             </Link>
                         </li>
                         <li className="inner-container-item">
-                            <Link className="inner-container__item_link" to="/">
+                            <Link
+                                className="inner-container__item_link"
+                                to="/portfolio">
                                 Portfolio
                             </Link>
                         </li>
                         <li className="inner-container-item">
-                            <Link className="inner-container__item_link" to="/">
+                            <Link
+                                className="inner-container__item_link"
+                                to="/contact">
                                 Contact Me
                             </Link>
                         </li>

@@ -10,6 +10,16 @@ function Contact() {
         msg: '',
     });
 
+    useEffect(() => {
+        //remove footer card
+        const footerCard = document.getElementsByClassName(
+            'footer-container__contact-section'
+        );
+        footerCard[0].style.display = 'none';
+        //clean up after unmount
+        return () => (footerCard[0].style.display = 'flex');
+    }, []);
+
     const handleChange = (e) => {
         const target = e.target.name;
         console.log(target);

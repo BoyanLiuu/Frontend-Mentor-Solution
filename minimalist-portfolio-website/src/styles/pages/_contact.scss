@@ -89,3 +89,53 @@
         border: 1px solid red;
     }
 }
+
+@media (min-width: 768px) {
+    .contact-contaier {
+        &__get-in-touch {
+            height: 36rem;
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .contact-contaier {
+        &__get-in-touch {
+            height: 35.6rem;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            h1 {
+                width: 35rem;
+                height: 25.8rem;
+                margin-top: 4.8rem;
+            }
+            p {
+                width: 63.5rem;
+                height: 21rem;
+                margin-top: 4.8rem;
+                align-self: flex-end;
+            }
+            .social-logos {
+                margin-left: 6.1rem;
+            }
+        }
+
+        &__form {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            h1 {
+                width: 35rem;
+                height: 25.8rem;
+                margin-top: 4.8rem;
+            }
+            form {
+                width: 63.5rem;
+                height: 42.6rem;
+                margin-top: 4.8rem;
+                align-self: flex-end;
+            }
+        }
+    }
+}

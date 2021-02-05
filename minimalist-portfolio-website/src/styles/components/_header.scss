@@ -2,10 +2,14 @@
     width: $phone-view-width;
     height: 3.2rem;
     margin: 3.2rem 0 4rem 0;
+    .hide {
+        display: flex;
+    }
 
     nav {
         display: flex;
         justify-content: space-between;
+        position: relative;
     }
     &__logo {
         width: 6rem;
@@ -29,6 +33,77 @@
         display: none;
     }
     &__mobile-nav-items {
+        position: absolute;
+        width: 22.3rem;
+        height: 18.6rem;
+        top: 5.6rem;
+        right: 0;
+        background-color: $grayish-dark-blue-color;
+        list-style: none;
+        @include flex-col-space-between-center;
         display: none;
+        justify-content: flex-start;
+    }
+    &__mobile-nav-link,
+    &__nav-item_link {
+        color: white;
+        @include phone-link-text;
+        transition: 0.3s all ease;
+
+        &:hover {
+            color: $slightly-desaturated-cyan-color;
+        }
+    }
+    &__nav-item {
+        margin-bottom: 3rem;
+        &:first-of-type {
+            margin-top: 4rem;
+        }
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+    &__nav-item_link.header__nav-item_link--active {
+        color: $slightly-desaturated-cyan-color;
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        width: 68.9rem;
+        margin: 6.4rem 0 9.4rem 0;
+        nav {
+            height: 3.2rem;
+        }
+        &__mobile-nav-items {
+            display: none;
+        }
+
+        &__burger {
+            display: none;
+        }
+        &__nav-items {
+            display: flex;
+            width: 30.9rem;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+        }
+        &__nav-item {
+            height: 1.4rem;
+            margin: 0;
+            &:first-of-type {
+                margin: 0;
+            }
+        }
+        &__nav-item_link {
+            color: $grayish-dark-blue-color;
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .header {
+        width: 110rem;
     }
 }

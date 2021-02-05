@@ -20,11 +20,6 @@ function App() {
                     <Switch>
                         <Route
                             exact
-                            path="/"
-                            render={() => <Home viewport={size} />}
-                        />
-                        <Route
-                            exact
                             path="/contact"
                             render={() => <Contact viewport={size} />}
                         />
@@ -33,10 +28,16 @@ function App() {
                             path="/portfolio"
                             render={() => <Portfolio viewport={size} />}
                         />
+
                         <Route
                             exact
                             path="/portfolio/:work"
-                            render={() => <PortfolioDetail viewport={size}/>}
+                            render={() => <PortfolioDetail viewport={size} />}
+                        />
+                        <Route
+                            exact
+                            path="/"
+                            render={() => <Home viewport={size} />}
                         />
                     </Switch>
                 </div>

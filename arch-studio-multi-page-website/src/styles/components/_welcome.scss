@@ -1,0 +1,92 @@
+.welcome-section {
+    width: 31.1rem;
+    margin-bottom: 9.7rem;
+
+    &__textbox {
+        height: 64.3rem;
+    }
+    &__image,
+    &__heading {
+        display: none;
+    }
+    &__main-content {
+        height: 100%;
+        margin-top: 6.8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        h2 {
+            font-size: 4rem;
+            line-height: 4.8rem;
+            margin-bottom: 2.9rem;
+        }
+        p {
+            @include main-font;
+            font-weight: 500;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin-top: 17rem;
+        margin-bottom: 20rem;
+        &__heading {
+            position: absolute;
+            display: inline;
+            left: -0.2rem;
+            top: -16rem;
+            font-weight: 700;
+            font-size: 12rem;
+            line-height: 20rem;
+            color: $very-light-grey-color;
+        }
+
+        &__textbox {
+            height: 44.8rem;
+        }
+        &__main-content {
+            margin: 0;
+            height: 44.8rem;
+            h2 {
+                font-size: 5.6rem;
+                width: 44.6rem;
+                line-height: 5.6rem;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        margin-top: 12.1rem;
+
+        height: 56.8rem;
+
+        &__heading {
+            font-size: 20rem;
+            left: 0rem;
+            top: -4rem;
+        }
+        &__image {
+            display: block;
+            height: 56.8rem;
+        }
+        &__textbox {
+            width: 92.2rem;
+            height: 100%;
+            margin-left: auto;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+        &__main-content {
+            width: 44.6rem;
+
+            h2 {
+                font-size: 5.6rem;
+                width: 44.6rem;
+                line-height: 5.6rem;
+            }
+        }
+    }
+}

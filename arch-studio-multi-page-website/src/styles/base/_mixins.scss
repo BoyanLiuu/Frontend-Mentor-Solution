@@ -1,0 +1,29 @@
+@mixin main-font {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
+
+@mixin text-func($size, $height) {
+    font-size: $size;
+    line-height: $height;
+    color: white;
+}
+
+@mixin link-btn($width) {
+    background-color: $very-dark-blue-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7.2rem;
+    width: $width;
+
+    &:hover {
+        background-color: $dark-grey-color;
+    }
+
+    span {
+        @include main-font;
+        margin-right: 15px;
+        color: $very-light-grey-color;
+    }
+}

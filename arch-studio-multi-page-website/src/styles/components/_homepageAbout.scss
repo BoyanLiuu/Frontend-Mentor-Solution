@@ -1,0 +1,35 @@
+.about-page-redirect {
+    width: 100%;
+    height: 56rem;
+    position: relative;
+    margin-bottom: 7.3rem;
+    &::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.5;
+        z-index: -1;
+    }
+    &__backdrop {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -2;
+    }
+    &__btn {
+        @include link-btn(18.7rem);
+        margin-left: 3.2rem;
+    }
+    h2 {
+        z-index: 10;
+        @include text-func(4rem, 4.8rem);
+        padding: 18.1rem 0 0 3.2rem;
+        margin-bottom: 3.2rem;
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: 20rem;
+    }
+}

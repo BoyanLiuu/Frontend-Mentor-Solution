@@ -1,0 +1,130 @@
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @media screen and (min-width: 768px) {
+    }
+    @media screen and (min-width: 1440px) {
+    }
+}
+.navbar {
+    width: 31.1rem;
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    color: $medium-grey-color;
+    padding: 3.5rem 0;
+
+    &__logo {
+        width: 7.7rem;
+        height: 3.2rem;
+    }
+
+    &__links {
+        width: 100%;
+        display: none;
+        @media screen and (min-width: 768px) {
+            display: flex;
+        }
+    }
+
+    .navbar__links--mobile,
+    .backdrop {
+        display: none;
+    }
+
+    &--mobile {
+        display: block;
+
+        cursor: pointer;
+        width: 2.4rem;
+        height: 1.7rem;
+
+        .close-logo {
+            display: none;
+            &.spin {
+                transform: rotateZ(360deg);
+                transition: transform 0.3s;
+            }
+        }
+
+        &.change {
+            .close-logo {
+                display: block;
+            }
+            .hamburger-logo {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .backdrop {
+            display: flex;
+            transform: translateX(105%);
+            position: absolute;
+            width: 200vw;
+            height: 100vh;
+            left: -25rem;
+            top: 100%;
+            background-color: $dark-grey-opacity-color;
+            z-index: 2;
+            transition: 0.3s;
+
+            &.active {
+                transform: translateX(0);
+            }
+        }
+
+        .navbar__links--mobile {
+            position: absolute;
+            display: flex;
+            top: 100%;
+            left: -5rem;
+
+            width: 200vw;
+            height: 23.5rem;
+            padding: 6rem 0 6rem 4rem;
+            background-color: $very-light-grey-color;
+            transform: translatex(100vw);
+            transition: 0.3s ease-in-out;
+            z-index: 5;
+
+            ul {
+                flex-direction: column;
+                align-items: flex-start;
+
+                li {
+                    color: $very-dark-blue-color;
+                    font-size: 1.8rem;
+                    margin-bottom: 2rem;
+                    letter-spacing: 1px;
+                }
+            }
+
+            &.active {
+                transform: translatex(0);
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        width: $tablet-view-width;
+        &__logo {
+            margin-right: 9.4rem;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        width: $desktop-view-width;
+    }
+}

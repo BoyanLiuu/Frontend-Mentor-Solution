@@ -1,0 +1,136 @@
+.homepage__hero {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 7.4rem;
+
+    &--backdrop {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+
+        img {
+            filter: brightness(0.75);
+            height: 100%;
+            width: 100%;
+
+            &.active--timer,
+            .active--click {
+                animation: flash 1200ms;
+
+                @keyframes flash {
+                    0% {
+                        opacity: 0.4;
+                    }
+                    100% {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    &__textbox {
+        max-width: 55%;
+        height: 350px;
+        margin: 150px;
+
+        & > * {
+            color: $very-light-grey-color;
+            display: flex;
+        }
+
+        h2 {
+            font-size: calc(3em + 2.2vw);
+            align-items: flex-end;
+        }
+
+        p {
+            @include main-font;
+            margin: 20px 0 10px;
+        }
+        .link-btn {
+            @include link-btn(25.2rem);
+        }
+    }
+
+    &--pagination {
+        position: absolute;
+        bottom: 0;
+        left: -60px;
+
+        .pagination__btn {
+            background-color: white;
+            color: $medium-grey-color;
+            height: 60px;
+            width: 60px;
+            border: 0;
+            font-family: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.35s;
+
+            &:hover {
+                background-color: $very-light-grey-color;
+            }
+
+            &.active {
+                background-color: $very-dark-blue-color;
+                color: white;
+            }
+        }
+
+        @media screen and (max-width: 755px) {
+            display: none;
+        }
+    }
+
+    @media screen and (min-width: 1440px) and (max-width: 768px) {
+        height: 72rem;
+
+        &__textbox {
+            height: 45.7rem;
+            margin: 36.1rem;
+            margin: 120px;
+        }
+
+        &--pagination {
+            left: -50px;
+
+            .pagination__btn {
+                height: 50px;
+                width: 50px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1440px) and (min-width: 768px) {
+        height: 72rem;
+
+        &__textbox {
+            max-width: 80%;
+            display: flex;
+            flex-direction: column;
+            margin: 15rem auto 6.5rem;
+            justify-content: center;
+
+            p {
+                margin: 3rem 0;
+            }
+        }
+    }
+
+    @media screen and (max-width: 540px) {
+        left: -9vw;
+        width: calc(100% + 18vw);
+
+        &__textbox {
+            height: 400px;
+            margin: 60px auto;
+        }
+    }
+}

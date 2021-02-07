@@ -10,7 +10,7 @@
             text-transform: capitalize;
 
             &:hover {
-                color: get-color(dark-blue);
+                color: $very-dark-blue-color;
 
                 &::after {
                     content: '';
@@ -19,7 +19,7 @@
                     bottom: -2px;
                     height: 1px;
                     width: 80%;
-                    background: get-color(dark-blue);
+                    background: $very-dark-blue-color;
 
                     @media screen and (max-width: 540px) {
                         display: none;
@@ -38,7 +38,7 @@
 
         &.current a {
             position: relative;
-            color: get-color(dark-blue);
+            color: $very-dark-blue-color;
 
             &::after {
                 content: '';
@@ -47,7 +47,7 @@
                 bottom: -2px;
                 height: 1px;
                 width: 80%;
-                background: get-color(dark-blue);
+                background: $very-dark-blue-color;
             }
         }
     }

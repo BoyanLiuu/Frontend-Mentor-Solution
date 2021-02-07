@@ -12,6 +12,9 @@
     &__btn {
         @include link-btn(31.1rem);
     }
+    .last {
+        margin-top: 2.4rem;
+    }
 
     @media screen and (min-width: 768px) {
         width: 100%;
@@ -111,6 +114,10 @@
             @include text-func(20rem, 20rem);
             opacity: 0.5;
             color: white;
+        }
+
+        &__textbox {
+            top: 46.6rem;
         }
     }
 }

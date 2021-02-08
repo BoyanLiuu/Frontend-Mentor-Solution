@@ -142,4 +142,18 @@ const leadersData = [
     },
 ];
 
-export { hero, featuredLinks, portfolioLinks, leadersData };
+const officeInfo = [
+    {
+        name: 'Main Office',
+        mail: 'archone@mail.com',
+        address: '1892 Chenoweth Drive TN',
+        phone: '123-456-3451',
+    },
+    {
+        name: 'Office II',
+        mail: 'archtwo@mail.com',
+        address: '3399 Wines Lane TX',
+        phone: '832-123-4321',
+    },
+];
+export { hero, featuredLinks, portfolioLinks, leadersData, officeInfo };

@@ -26,6 +26,7 @@ main {
     flex-direction: column;
     align-items: center;
     transition: 0.3s all ease;
+    position: relative;
     @media screen and (min-width: 768px) {
         width: $tablet-view-width;
     }
@@ -45,4 +46,33 @@ a {
 }
 .hoverColor {
     color: $very-dark-blue-color;
+}
+
+#location-design {
+    width: 2.5rem;
+    top: -7rem;
+    left: -6rem;
+    position: absolute;
+    display: flex;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+}
+#location-design span:first-of-type {
+    width: 0.2rem;
+    height: 10.4rem;
+    margin: auto;
+    background-color: $medium-grey-color;
+}
+#location-design span:last-of-type {
+    color: $medium-grey-color;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    letter-spacing: 1.5rem;
+    margin-top: 4.8rem;
+}
+
+@media (max-width: 768px) {
+    #location-design {
+        display: none;
+    }
 }

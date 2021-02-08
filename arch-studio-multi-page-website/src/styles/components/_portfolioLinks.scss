@@ -1,0 +1,78 @@
+.portfolio-link {
+    position: relative;
+    display: block;
+
+    transition: all 0.3s ease-in-out;
+    &__image {
+        z-index: -2;
+    }
+    &__image-container {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 0.5;
+            z-index: 2;
+        }
+    }
+
+    h1 {
+        display: none;
+    }
+    &__textbox {
+        width: auto;
+        top: 16.2rem;
+        left: 2.4rem;
+        position: absolute;
+        z-index: 10;
+
+        h5 {
+            @include text-func(1.8rem, 2.5rem);
+        }
+        p {
+            margin-top: 0.4rem;
+            width: 13.5rem;
+            color: white;
+            @include main-font;
+            opacity: 0.75;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    @media screen and (min-width: 768px) {
+        & h1 {
+            position: absolute;
+            top: 1.6rem;
+            right: 0.8rem;
+            display: block;
+            z-index: 10;
+            @include text-func(20rem, 20rem);
+            opacity: 0.5;
+            color: white;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        & h1 {
+            position: absolute;
+            top: 1.6rem;
+            right: 0.8rem;
+            display: block;
+            z-index: 10;
+            @include text-func(20rem, 20rem);
+            opacity: 0.5;
+            color: white;
+        }
+
+        &__textbox {
+            top: 46.6rem;
+        }
+    }
+}

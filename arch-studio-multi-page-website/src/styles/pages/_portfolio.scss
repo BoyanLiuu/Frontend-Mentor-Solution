@@ -1,0 +1,18 @@
+.portfolio-page {
+    &__grid {
+        display: grid;
+        row-gap: 2.4rem;
+    }
+
+    @media screen and (min-width: 1440px) {
+        width: 100%;
+        .portfolio-link {
+            width: 35rem;
+        }
+
+        &__grid {
+            column-gap: 2.4rem;
+            grid-template-columns: 35rem 35rem 35rem;
+        }
+    }
+}

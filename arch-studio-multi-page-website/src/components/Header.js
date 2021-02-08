@@ -21,44 +21,46 @@ const Header = () => {
     };
 
     return (
-        <header>
-            <nav className="navbar">
-                <Link to="/" onClick={() => setMenuOpen(false)}>
-                    <img
-                        className="navbar__logo"
-                        src={logo}
-                        alt="company logo"
-                    />
-                </Link>
-                <div className="navbar__links">
-                    <NavLinks />
-                </div>
-                <div
-                    className="navbar--mobile"
-                    ref={mobileNavBtn}
-                    onClick={() => setMenuOpen(!menuOpen)}>
-                    <img
-                        src={hamburger}
-                        alt="hamburger logo"
-                        onClick={mobileNavOpen}
-                        className="hamburger-logo"
-                    />
-                    <img
-                        src={close}
-                        alt="close logo"
-                        onClick={mobileNavClosed}
-                        className={`close-logo ${!menuOpen ? 'spin' : ''}`}
-                    />
-                </div>
-                <div
-                    className={`navbar__links--mobile ${
-                        menuOpen ? 'active' : ''
-                    }`}>
-                    <NavLinks />
-                </div>
-                <div className={`backdrop ${menuOpen ? 'active' : ''}`} />
-            </nav>
-        </header>
+        <>
+            <header>
+                <nav className="navbar">
+                    <Link to="/" onClick={() => setMenuOpen(false)}>
+                        <img
+                            className="navbar__logo"
+                            src={logo}
+                            alt="company logo"
+                        />
+                    </Link>
+                    <div className="navbar__links">
+                        <NavLinks />
+                    </div>
+                    <div
+                        className="navbar--mobile"
+                        ref={mobileNavBtn}
+                        onClick={() => setMenuOpen(!menuOpen)}>
+                        <img
+                            src={hamburger}
+                            alt="hamburger logo"
+                            onClick={mobileNavOpen}
+                            className="hamburger-logo"
+                        />
+                        <img
+                            src={close}
+                            alt="close logo"
+                            onClick={mobileNavClosed}
+                            className={`close-logo ${!menuOpen ? 'spin' : ''}`}
+                        />
+                    </div>
+                    <div
+                        className={`navbar__links--mobile ${
+                            menuOpen ? 'active' : ''
+                        }`}>
+                        <NavLinks />
+                    </div>
+                    <div className={`backdrop ${menuOpen ? 'active' : ''}`} />
+                </nav>
+            </header>
+        </>
     );
 };
 

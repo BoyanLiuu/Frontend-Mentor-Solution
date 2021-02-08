@@ -1,25 +1,20 @@
-import React, { useState } from 'react';
-import { PortfolioLink } from '../components';
-import data from '../portfolios.json';
-
+import React from 'react';
+import { PortfolioLinks } from '../components';
+import { portfolioLinks as data } from './../assets/data/data';
 const Portfolio = () => {
-    const [portfolios] = useState(data);
-
     return (
-        <div className="page">
-            <div className="page__directory">
+        <>
+            <div id="location-design">
+                <span></span>
                 <span>Portfolio</span>
             </div>
-            <div className="portfolios__grid">
-                {portfolios.map((portfolio) => (
-                    <PortfolioLink 
-                        link={portfolio}
-                        key={portfolio.id}
-                    />
-                ))}
+            <div className="portfolio-page">
+                <div className="portfolio-page__grid">
+                    <PortfolioLinks data={data} />
+                </div>
             </div>
-        </div>
-    )
-}
+        </>
+    );
+};
 
 export default Portfolio;

@@ -1,0 +1,65 @@
+.heritage {
+    width: 31.1rem;
+    align-self: flex-start;
+    margin: 36.5rem 0 7.2rem 2.4rem;
+
+    &__textbox {
+        &--line {
+            width: 6.5rem;
+            border-top: 1px solid $light-grey-color;
+        }
+        &--heading {
+            @include text-func(4rem, 4.8rem);
+            color: $very-dark-blue-color;
+            margin: 6.8rem 0 2.9rem 0;
+        }
+        &--subheading {
+            @include text-func(1.5rem, 2.5rem);
+            color: $dark-grey-color;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 42.5rem;
+        }
+    }
+
+    &__image {
+        display: none;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 100%;
+        margin: 20rem 0 17.5rem 0;
+        &__textbox {
+            &--heading {
+                @include text-func(5.6rem, 5.6rem);
+                color: $very-dark-blue-color;
+                margin-bottom: 3.5rem;
+            }
+            &--subheading {
+                height: 27.5rem;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        margin-bottom: 20rem;
+        display: flex;
+        justify-content: space-between;
+        &__textbox {
+            width: 44.5rem;
+            &--heading {
+                margin-bottom: 3.2rem;
+            }
+            &--subheading {
+                height: 30rem;
+            }
+        }
+
+        &__image {
+            display: block;
+            width: 54rem;
+            height: 56.8rem;
+        }
+    }
+}

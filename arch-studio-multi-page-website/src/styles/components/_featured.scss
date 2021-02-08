@@ -16,6 +16,13 @@
         margin-top: 2.4rem;
     }
 
+    &__portfolios {
+        height: 79.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
     @media screen and (min-width: 768px) {
         width: 100%;
         &__top {
@@ -34,90 +41,9 @@
     }
     @media screen and (min-width: 1440px) {
         &__portfolios {
-            display: flex;
+            height: 56rem;
             flex-direction: row;
             justify-content: space-between;
-        }
-    }
-}
-
-.featured__section__portfolio {
-    position: relative;
-    display: block;
-    margin-bottom: 2.4rem;
-    &:nth-of-type(3) {
-        margin-bottom: 0;
-    }
-    transition: all 0.3s ease-in-out;
-    &__image {
-        z-index: -2;
-    }
-    &__image-container {
-        position: relative;
-
-        &::before {
-            position: absolute;
-            content: '';
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            opacity: 0.5;
-            z-index: 2;
-        }
-    }
-
-    h1 {
-        display: none;
-    }
-    &__textbox {
-        width: auto;
-        top: 16.2rem;
-        left: 2.4rem;
-        position: absolute;
-        z-index: 10;
-
-        h5 {
-            @include text-func(1.8rem, 2.5rem);
-        }
-        p {
-            width: 13.5rem;
-            color: white;
-            @include main-font;
-            opacity: 0.75;
-        }
-    }
-
-    &:hover {
-        transform: scale(1.1);
-    }
-
-    @media screen and (min-width: 768px) {
-        & h1 {
-            position: absolute;
-            top: 1.6rem;
-            right: 0.8rem;
-            display: block;
-            z-index: 10;
-            @include text-func(20rem, 20rem);
-            opacity: 0.5;
-            color: white;
-        }
-    }
-
-    @media screen and (min-width: 1440px) {
-        & h1 {
-            position: absolute;
-            top: 1.6rem;
-            right: 0.8rem;
-            display: block;
-            z-index: 10;
-            @include text-func(20rem, 20rem);
-            opacity: 0.5;
-            color: white;
-        }
-
-        &__textbox {
-            top: 46.6rem;
         }
     }
 }

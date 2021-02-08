@@ -3,7 +3,8 @@ import { HomePageHero, Welcome, HomepageAbout, Featured } from '../components';
 
 const Home = () => (
     <>
-        <div className="page__directory">
+        <div id="location-design">
+            <span></span>
             <span>Home</span>
         </div>
         <HomePageHero />

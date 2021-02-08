@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FeaturedPortfolioLinks } from '../components';
+import { PortfolioLinks } from '../components';
 import arrow from '../assets/images/icons/icon-arrow.svg';
-
+import { featuredLinks as data } from '../assets/data/data';
 const Featured = () => (
     <div className="featured-section">
         <div className="featured-section__top">
@@ -14,7 +14,7 @@ const Featured = () => (
         </div>
 
         <div className="featured-section__portfolios">
-            <FeaturedPortfolioLinks />
+            <PortfolioLinks data={data} />
         </div>
         <Link to="/portfolio" className="featured-section__btn last">
             <span>See All</span>

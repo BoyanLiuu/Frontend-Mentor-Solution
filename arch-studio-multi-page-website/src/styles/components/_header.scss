@@ -2,13 +2,14 @@ header {
     width: 100%;
     display: flex;
     justify-content: center;
-    @media screen and (min-width: 768px) {
+    @media screen and (max-width: 768px) {
+        padding: 0 3.2rem;
     }
     @media screen and (min-width: 1440px) {
     }
 }
 .navbar {
-    width: 31.1rem;
+    width: 100%;
     height: 3.2rem;
     display: flex;
     align-items: center;
@@ -87,7 +88,7 @@ header {
             position: absolute;
             display: flex;
             top: 100%;
-            left: -5rem;
+            left: 20rem;
 
             width: 200vw;
             height: 23.5rem;

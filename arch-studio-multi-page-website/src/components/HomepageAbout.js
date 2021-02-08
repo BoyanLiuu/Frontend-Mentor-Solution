@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { ResizeContext } from '../context/resize';
 import { Link } from 'react-router-dom';
-import backdrop from '../assets/images/home/desktop/image-small-team.jpg';
 import arrow from '../assets/images/icons/icon-arrow.svg';
 
 const HomepageAbout = () => {

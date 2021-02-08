@@ -8,7 +8,7 @@ const ContactDetails = () => {
 
     const renderList = data.map((item, idx) => {
         return (
-            <div className="contact__details__location">
+            <div key={idx} className="contact__details__location">
                 <address>
                     <h5 className="contact__details__office-heading">
                         {item.name}
@@ -50,9 +50,7 @@ const ContactDetails = () => {
         <div className="contact__details">
             <div className="contact__details__line" />
             <div className="contact__details__info">
-                <h2 className="contact__details__heading">
-                    Contact <br /> Details
-                </h2>
+                <h2 className="contact__details__heading">Contact Details</h2>
                 <div className="contact__details__info-locations">
                     {renderList}
                 </div>

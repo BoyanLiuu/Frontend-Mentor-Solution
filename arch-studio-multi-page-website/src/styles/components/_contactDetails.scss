@@ -1,6 +1,5 @@
 .contact__details {
     width: 100%;
-    margin-top: 36.5rem;
     margin: 36.5rem 0 7.2rem 0;
     &__line {
         margin-left: 3.2rem;
@@ -9,6 +8,7 @@
         background-color: $medium-grey-color;
     }
     &__heading {
+        width: 18rem;
         @include text-func(4rem, 4.8rem);
         color: $very-dark-blue-color;
 
@@ -62,5 +62,61 @@
 
     .contact__details__map {
         width: 100%;
+    }
+
+    @media screen and (min-width: 768px) {
+        margin: 20rem 0;
+        &__heading {
+            width: 100%;
+            @include text-func(5.6rem, 5.6rem);
+            color: $very-dark-blue-color;
+            margin: 7.4rem 0 6.5rem 0;
+        }
+
+        &__location {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            address {
+                width: 35rem;
+            }
+
+            &:nth-of-type(2) {
+                margin-bottom: 0;
+            }
+        }
+        &__info {
+            margin-bottom: 20rem;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        &__info {
+            display: flex;
+            height: 21rem;
+        }
+        &__heading {
+            align-self: flex-start;
+            width: 31.7rem;
+            height: 100%;
+            margin: 7.4rem 0 0 0;
+        }
+        &__info-locations {
+            display: flex;
+            width: 73rem;
+        }
+        &__location {
+            flex-direction: column;
+            margin-top: 7.4rem;
+            height: 100%;
+            width: 31.7rem;
+            address {
+                width: 100%;
+            }
+        }
+
+        &__redirect {
+            align-self: flex-start;
+        }
     }
 }

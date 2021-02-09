@@ -9,7 +9,7 @@ const App = () => (
     <Router>
         <ResizeContextProvider>
             <Header />
-            <main>
+            <main className="slideY">
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/about" component={About} />

@@ -5,6 +5,7 @@ import { ReactComponent as Twitter } from './../assets/images/icons/icon-twitter
 const LeaderCard = ({ avatar, name, title }) => (
     <div className="leaders__card">
         <div className="leaders__card__avatar-container">
+            <div className="back-drop" />
             <img
                 className="leaders__card__avatar"
                 src={avatar}
@@ -22,7 +23,7 @@ const LeaderCard = ({ avatar, name, title }) => (
         <div className="leaders__card__textbox">
             <h5>{name}</h5>
             <p>{title}</p>
-            <div className="leaders__card__avatar__overlay">
+            <div className="leaders__card__avatar__overlay leaders__card__social-icon--phone">
                 <a href="https://twitter.com/" className="social-logo">
                     <Linkedin />
                 </a>

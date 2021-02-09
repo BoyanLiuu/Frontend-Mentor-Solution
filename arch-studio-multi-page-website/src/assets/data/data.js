@@ -144,16 +144,20 @@ const leadersData = [
 
 const officeInfo = [
     {
+        id: 1,
         name: 'Main Office',
         mail: 'archone@mail.com',
         address: '1892 Chenoweth Drive TN',
         phone: '123-456-3451',
+        coordinates: [32.779947, -96.802498],
     },
     {
+        id: 2,
         name: 'Office II',
         mail: 'archtwo@mail.com',
         address: '3399 Wines Lane TX',
         phone: '832-123-4321',
+        coordinates: [35.958213, -83.933372],
     },
 ];
 export { hero, featuredLinks, portfolioLinks, leadersData, officeInfo };

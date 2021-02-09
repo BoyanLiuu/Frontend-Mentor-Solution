@@ -1,0 +1,118 @@
+.connect__section {
+    display: flex;
+    justify-content: space-between;
+    width: 111rem;
+    &__heading {
+        width: 35rem;
+        @include text-func(5.6rem, 5.6rem);
+        color: $very-dark-blue-color;
+    }
+
+    &__form {
+        position: relative;
+        width: 73rem;
+
+        & > * {
+            margin-bottom: 15px;
+            position: relative;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            input,
+            textarea {
+                font-family: inherit;
+                width: 100%;
+                padding: 10px 20px;
+                border: 0;
+                border-bottom: 1px solid $medium-grey-color;
+
+                &::placeholder {
+                    color: $medium-grey-color;
+                }
+
+                &:focus-within {
+                    border-bottom: 1px solid $very-dark-blue-color;
+                }
+            }
+
+            textarea {
+                display: flex;
+                resize: vertical;
+                min-height: 100px;
+                max-height: 200px;
+            }
+
+            small {
+                display: none;
+                position: absolute;
+                right: 10px;
+                bottom: 2px;
+                color: $error-color;
+                font-size: 0.75em;
+            }
+
+            &.invalid {
+                input,
+                textarea {
+                    color: get-color(error);
+                    border-bottom: 1px solid $error-color;
+                    &::placeholder {
+                        color: $error-color;
+                    }
+                }
+                small {
+                    display: block;
+                }
+            }
+        }
+
+        &__button {
+            position: absolute;
+            display: flex;
+            border: 0;
+            top: 100%;
+            right: 0;
+            height: 55px;
+            width: 55px;
+            background-color: $very-dark-blue-color;
+            cursor: pointer;
+
+            &--arrow {
+                margin: auto;
+
+                &.active {
+                    transform: translateX(19px);
+                    transition: 0.75s;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 1440px) and (min-width: 768px) {
+        flex-direction: column;
+        width: 57.2rem;
+        margin-bottom: 14.8rem;
+
+        &__heading {
+            width: 100%;
+            margin-bottom: 4rem;
+        }
+        &__form {
+            width: 57.2rem;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        width: 31.1rem;
+        margin-bottom: 13.2rem;
+        &__heading {
+            width: 100%;
+            margin-bottom: 4rem;
+        }
+        &__form {
+            width: 31.1rem;
+        }
+    }
+}

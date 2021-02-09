@@ -3,7 +3,6 @@
     box-sizing: border-box;
     font-size: 62.5%;
     font-family: 'Spartan', sans-serif;
-    scroll-behavior: smooth;
 }
 *,
 ::before,
@@ -74,5 +73,21 @@ a {
 @media (max-width: 768px) {
     #location-design {
         display: none;
+    }
+}
+
+.slideY {
+    animation-duration: 0.6s;
+    animation-name: slideY;
+}
+
+@keyframes slideY {
+    from {
+        padding-top: 26rem;
+        opacity: 0.6;
+    }
+    to {
+        padding-top: 0;
+        opacity: 1;
     }
 }

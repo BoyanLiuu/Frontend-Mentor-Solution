@@ -1,11 +1,16 @@
-import React, { useContext } from 'react';
-import { ResizeContext } from '../context/resize';
+import React, { useState } from 'react';
+import { MapContainer, useMap, TileLayer, Marker, Popup } from 'react-leaflet';
+import { Icon } from 'leaflet';
+
+import iconOffice from './../assets/images/icons/icon-map-point.svg';
 import arrow from '../assets/images/icons/icon-arrow-dark.svg';
 import { officeInfo as data } from './../assets/data/data';
 const ContactDetails = () => {
-    const { viewport } = useContext(ResizeContext),
-        map = 'image-map.png';
+    const [goToOfficeId, setGoToOfficeId] = useState(null);
 
+    function goToMapOffice(officeId) {
+        setGoToOfficeId(officeId);
+    }
     const renderList = data.map((item, idx) => {
         return (
             <div key={idx} className="contact__details__location">
@@ -34,18 +39,54 @@ const ContactDetails = () => {
                         </li>
                     </ul>
                 </address>
-                <a className="contact__details__redirect" href="#map">
+                <div
+                    className="contact__details__redirect"
+                    href="#map"
+                    onClick={() => goToMapOffice(item.id)}>
                     <span>View on Map</span>
                     <img
                         className="contact__details__arrow"
                         src={arrow}
                         alt="redirect arrow"
                     />
-                </a>
+                </div>
             </div>
         );
     });
 
+    //Map set up
+    const PointsLayer = () => {
+        return data.map((office) => (
+            <PointMarker
+                key={office.id}
+                office={office}
+                goToOffice={office.id === goToOfficeId}
+            />
+        ));
+    };
+
+    const PointMarker = ({ office, goToOffice }) => {
+        const map = useMap();
+        const icon = new Icon({
+            iconUrl: iconOffice,
+            iconSize: [40, 48],
+        });
+        if (goToOffice) {
+            map.flyTo(office.coordinates, 15, { duration: 2 });
+        }
+        return (
+            <Marker
+                icon={icon}
+                position={[office.coordinates[0], office.coordinates[1]]}>
+                <Popup
+                    position={[office.coordinates[0], office.coordinates[1]]}>
+                    <div>
+                        <h3>{office.name}</h3>
+                    </div>
+                </Popup>
+            </Marker>
+        );
+    };
     return (
         <div className="contact__details">
             <div className="contact__details__line" />
@@ -55,18 +96,14 @@ const ContactDetails = () => {
                     {renderList}
                 </div>
             </div>
-            <div className="contact__details__map__container" id="map">
-                <img
-                    className="contact__details__map"
-                    src={
-                        viewport > 800
-                            ? require(`../assets/images/contact/desktop/` + map)
-                            : viewport > 500
-                            ? require(`../assets/images/contact/tablet/` + map)
-                            : require(`../assets/images/contact/mobile/` + map)
-                    }
-                    alt="Map showing locations of Arch Studio offices"
-                />
+            <div className="contact__details__map__container">
+                <MapContainer
+                    bounds={data.map((office) => office.coordinates)}
+                    zoomControl={false}
+                    style={{ height: '100%', width: '100%' }}>
+                    <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                    <PointsLayer />
+                </MapContainer>
             </div>
         </div>
     );

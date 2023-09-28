@@ -11,6 +11,9 @@ module.exports = {
         'grayish-blue': 'hsl(210, 4%, 67%)',
         'light-white': '#FFFCF8',
         'very-dark-grayish-blue': 'hsl(213, 9%, 39%)',
+        'dark-moderate-cyan': 'hsl(168, 34%, 41%)',
+        'footer-color': 'rgba(144, 212, 198, 1)',
+        'footer-logo-color': '	hsl(168, 45%, 32%)',
       },
       backgroundImage: {
         'dark-desaturated-blue': 'hsl(212, 27%, 19%)',
@@ -19,7 +22,7 @@ module.exports = {
         yellow: 'hsl(51, 100%, 49%)',
         'dark-desaturated-cyan': 'hsl(167, 40%, 24%)',
         'dark-blue': 'hsl(198, 62%, 26%)',
-        'dark-moderate-cyan': 'hsl(168, 34%, 41%)',
+        'hero-img': "url('/')",
       },
       screens: {
         desktop: '1440px',
@@ -27,6 +30,22 @@ module.exports = {
       },
       borderRadius: {
         full: '50%',
+      },
+      fontSize: {
+        'main-desktop-header': [
+          '56px',
+          {
+            letterSpacing: '8.75px',
+            fontWeight: '900',
+          },
+        ],
+        'main-phone-header': [
+          '40px',
+          {
+            letterSpacing: '6.25px',
+            fontWeight: '900',
+          },
+        ],
       },
     },
   },

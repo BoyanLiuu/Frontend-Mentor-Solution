@@ -2,7 +2,14 @@ import React from 'react';
 
 const Logo = ({ color }) => {
   return (
-    <svg width="170" height="33" viewBox="0 0 170 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="170"
+      height="33"
+      viewBox="0 0 170 33"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="cursor-pointer"
+    >
       <path
         id="sunnyside"
         fillRule="evenodd"

@@ -25,3 +25,6 @@ Challenges                    | Stacks          | Repo | Demo
 | 15. Testimonial grid section with | Html, Css, Css Flexbox, Js  | [Repo](https://github.com/BoyanLiuu/Frontend-Mentor-Solution/tree/master/testimonials-grid-section-main) |[Live](https://intro-component-with-signup-form-solution.vercel.app/)
 | 16. Four card feature section |  Html, Css, Css Flexbox, Js | [Repo](https://github.com/BoyanLiuu/Frontend-Mentor-Solution/tree/master/four-card-feature-section-master) |[Live](https://four-card-feature-section-solution-tau.vercel.app/)
 | 17. Skilled e-learning landing page |  Next.js, Tailwind css | [Repo](https://github.com/BoyanLiuu/Frontend-Mentor-Solution/tree/master/skilled-elearning-landing-page) |[Live](https://skilled-elearning-landing-page-pearl.vercel.app/)
+| 18. Skilled e-learning landing page |  Next.js, Tailwind css | [Repo](https://github.com/BoyanLiuu/Frontend-Mentor-Solution/tree/master/sunnyside-agency-landing-page) |[Live](https://sunnyside-agency-landing-page-teal.vercel.app/)
+
+

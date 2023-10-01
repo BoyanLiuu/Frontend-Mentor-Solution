@@ -27,7 +27,7 @@ const Gallery = () => {
   return (
     <section className="grid grid-cols-12">
       {galleryList.map(({ ariaLabel, phoneSrc, desktopSrc }) => (
-        <div key={ariaLabel} className="relative h-fit col-span-6 desktop:col-span-3 aspect-square">
+        <div key={ariaLabel} className="relative h-fit col-span-6 tablet:col-span-3 aspect-square">
           <picture>
             <source type="image/jpg" srcSet={phoneSrc} media="(max-width: 1439px)" />
 

@@ -21,9 +21,6 @@ module.exports = {
         'soft-red': 'hsl(7, 99%, 70%)',
         'dark-desaturated-blue': 'hsl(212, 27%, 19%)',
       },
-      backgroundImage: {
-        'dark-blue': 'hsl(198, 62%, 26%)',
-      },
       screens: {
         desktop: '1440px',
         tablet: '768px',

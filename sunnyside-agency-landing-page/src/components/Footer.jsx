@@ -4,7 +4,7 @@ import Logo from './Logo';
 
 const Footer = () => {
   return (
-    <footer className="pt-16 pb-20 px-10 desktop:py-[72px] bg-footer-color flex flex-col items-center">
+    <footer className="pt-16 pb-20 px-10 tablet:py-[72px] bg-footer-color flex flex-col items-center">
       <Logo color="#2C7566" />
       <ul className="flex text-dark-moderate-cyan text-lg  font-semibold leading-[25px] mt-10 mb-[88px] ">
         <li className="mr-[57px] cursor-pointer">About</li>

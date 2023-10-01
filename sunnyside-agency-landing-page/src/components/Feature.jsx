@@ -3,7 +3,7 @@ import React from 'react';
 const Feature = ({ title, content, className, hoverColor }) => {
   return (
     <div
-      className={` px-6 bg-light-white text-center desktop:text-left py-12 desktop:py-16 desktop:max-w[445px]  desktop:pl-[165px] desktop:pr-[107px] ${className} `}
+      className={` px-6 bg-light-white text-center tablet:text-left py-12 tablet:py-16 tablet:max-w[445px]  tablet:pl-[165px] tablet:pr-[107px] ${className} `}
     >
       <h2 className="text-main-phone-header tracking-normal">{title}</h2>
       <p className="text-lg text-dark-grayish-blue font-semibold leading-[30px] mt-8 mb-10">{content}</p>

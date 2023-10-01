@@ -26,11 +26,11 @@ const TestimonialContainer = () => {
     },
   ];
   return (
-    <section className="flex flex-col items-center bg-light-white pt-16 pb-[86px] px-6 desktop:py-[160px]">
-      <h3 className="mb-16 text-base tracking-[4px] text-grayish-blue font-black desktop:text-xl desktop:tracking-[5px] desktop:mb-[81px]">
+    <section className="flex flex-col items-center bg-light-white pt-16 pb-[86px] px-6 tablet:py-[160px]">
+      <h3 className="mb-16 text-base tracking-[4px] text-grayish-blue font-black tablet:text-xl tablet:tracking-[5px] tablet:mb-[81px]">
         CLIENT TESTIMONIALS
       </h3>
-      <div className="w-full text-center grid grid-cols-12 gap-y-16 desktop:gap-y-0 desktop:gap-x-[30px]">
+      <div className="w-full text-center grid grid-cols-12 gap-y-16 tablet:gap-y-0 tablet:gap-x-[30px]">
         {clients.map((client) => (
           <TestimonialCard {...client} key={client.name} />
         ))}

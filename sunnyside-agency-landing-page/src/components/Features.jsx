@@ -32,9 +32,9 @@ const Features = () => {
         <Feature
           {...featuresList[0]}
           hoverColor="after:bg-yellow"
-          className="order-2 desktop:order-1 col-span-12 desktop:col-span-6 "
+          className="order-2 tablet:order-1 col-span-12 tablet:col-span-6 "
         />
-        <div className="order-1 desktop:order-2 relative col-span-12 desktop:col-span-6 min-h-[343px]">
+        <div className="order-1 tablet:order-2 relative col-span-12 tablet:col-span-6 min-h-[343px]">
           <picture>
             <source type="image/jpg" srcSet="/mobile/image-transform.jpg" media="(max-width: 1439px)" />
 
@@ -47,9 +47,9 @@ const Features = () => {
         <Feature
           {...featuresList[1]}
           hoverColor="after:bg-soft-red"
-          className="order-4 desktop:order-3 col-span-12 desktop:col-span-6"
+          className="order-4 tablet:order-3 col-span-12 tablet:col-span-6"
         />
-        <div className="order-3 desktop:order-4 relative col-span-12 desktop:col-span-6 min-h-[343px]">
+        <div className="order-3 tablet:order-4 relative col-span-12 tablet:col-span-6 min-h-[343px]">
           <picture>
             <source type="image/jpg" srcSet="/mobile/image-stand-out.jpg" media="(max-width: 1439px)" />
 
@@ -59,9 +59,9 @@ const Features = () => {
           </picture>
         </div>
 
-        <div className="order-5 text-center relative col-span-12 desktop:col-span-6 pt-[398px] pb-[60px]   text-dark-desaturated-cyan px-6 flex flex-col items-center">
+        <div className="order-5 text-center relative col-span-12 tablet:col-span-6 pt-[398px] pb-[60px]   text-dark-desaturated-cyan px-6 flex flex-col items-center">
           <h2 className="text-[28px] font-black mb-[27px]">{featuresList[2].title}</h2>
-          <p className="text-base font-semibold desktop:max-w-[339px]">{featuresList[2].content}</p>
+          <p className="text-base font-semibold tablet:max-w-[339px]">{featuresList[2].content}</p>
           <picture>
             <source type="image/jpg" srcSet="/mobile/image-graphic-design.jpg" media="(max-width: 1439px)" />
 
@@ -75,9 +75,9 @@ const Features = () => {
             />
           </picture>
         </div>
-        <div className="order-6 text-center relative col-span-12 desktop:col-span-6 pt-[398px] pb-[60px]  text-dark-blue px-6 flex flex-col items-center">
+        <div className="order-6 text-center relative col-span-12 tablet:col-span-6 pt-[398px] pb-[60px]  text-dark-blue px-6 flex flex-col items-center">
           <h2 className="text-[28px] font-black  mb-[27px]">{featuresList[3].title}</h2>
-          <p className="text-base font-semibold desktop:max-w-[339px]">{featuresList[3].content}</p>
+          <p className="text-base font-semibold tablet:max-w-[339px]">{featuresList[3].content}</p>
           <picture>
             <source type="image/jpg" srcSet="/mobile/image-photography.jpg" media="(max-width: 1439px)" />
 
